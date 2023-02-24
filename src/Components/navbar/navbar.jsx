@@ -1,131 +1,73 @@
 import React, { useState } from 'react'
 import { data } from './data'
 import { loged } from './data'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { MdMenu } from 'react-icons/md'
 import './navbar.css'
 
-const NavbarContainer = styled.nav`
-  width: 14rem;
-  height: 100vh;
-  position: fixed;
-  z-index: 100;
-  background-color: var(--clr-primary-1);
-  align-items: center;
-  justify-content: center;
-  box-shadow: 5px 5px 5px var(--dark-shadow);
-`
-const Loged = styled.div`
-  line-height: 3.4rem;
-`
-
-const List = styled.ul`
-  list-style: none;
-`
-const LinkContainer = styled.li`
-  margin: 0 1rem;
-  &:hover {
-    border-radius: 4px;
-    padding: 0.2rem;
-    background-color: var(--dark-shadow);
-  }
-`
-
-const UnLoged = styled.div`
-  line-height: 3.4rem;
-`
-const UserPhoto = styled.div`
-  width: 5rem;
-  height: 5rem;
-  background-color: var(--clr-grey-1);
-  justify-content: center;
-  alig-items: center;
-  margin: 2rem auto;
-  border-radius: 20px;
-`
-const Photo = styled.img`
-  justify-content: center;
-  alig-items: center;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 20px;
-`
-const UserProfile = styled.div``
-
-const Username = styled.h1`
-  color: var(--clr-primary-3);
-  text-align: center;
-  justify-content: center;
-  margin: auto;
-  font-seize: 2rem;
-`
-const Menu = styled.button`
-  color: var(--clr-primary-3);
-  background-color: var(--clr-primary-1);
-  font-size: 2rem;
-  border: none;
-`
 function Navbar() {
     const [show, setShow] = useState(true)
 
     function showNabvar() {
         if (show) {
             setShow(false)
-			
-        }else{
-
+        } else {
             setShow(true)
         }
     }
 
     return (
-        <NavbarContainer className={show? 'navbar-show': 'navbar-hide'}>
-            <Menu onClick={()=>showNabvar()}>
+        <nav className={show ? 'NavbarContainer' : 'NavbarContainerHide'}>
+            <button className="Menu" onClick={() => showNabvar()}>
                 <MdMenu />
-            </Menu>
-            <UserProfile>
-                <UserPhoto>
+            </button>
+		
+            <div className="UserProfile">
+                <div className={show? 'UserPhoto' : 'hide-text'}>
                     <Link to={'/Profile'}>
-                        <Photo src="https://i.pinimg.com/originals/7b/b0/c7/7bb0c7c3684088adced7c455f9b0a307.jpg" />
+                        <img
+                            className={show? 'Photo':'hide-text'}
+                            src="https://i.pinimg.com/originals/7b/b0/c7/7bb0c7c3684088adced7c455f9b0a307.jpg"
+                        />
                     </Link>
-                </UserPhoto>
-                <Username>
-                    <Link className="link-list" to={'/Profile'}>
+                </div>
+                <h1 className={show? 'Username':'hide-text'}>
+                    <Link className='Username' to={'/Profile'}>
             Username
                     </Link>
-                </Username>
-            </UserProfile>
+                </h1>
+            </div>
 
-            <UnLoged>
-                <List>
+            <div className="UnLoged">
+                <ul className="List">
                     {data.map((links) => {
                         const { id, name, icon, url } = links
                         return (
-                            <LinkContainer key={id}>
+                            <li className="LinkContainer" key={id}>
                                 <Link to={url} className="link-list">
-                                    {icon} {name}
-                                </Link>
-                            </LinkContainer>
+                                    <div className={show ? 'normal' : 'big'}>{icon}</div>{' '}
+                                    <p className={show ? 'show-text' : 'hide-text'}>{name}</p>{' '}                                </Link>
+                            </li>
                         )
                     })}
-                </List>
-            </UnLoged>
-            <Loged>
-                <List>
+                </ul>
+            </div>
+            <div className="Loged">
+                <ul className="List">
                     {loged.map((log) => {
                         const { id, name, icon, url } = log
                         return (
-                            <LinkContainer key={id}>
+                            <li className="LinkContainer" key={id}>
                                 <Link to={url} className="link-list">
-                                    {icon} {name}
+                                    <div className={show ? 'normal' : 'big'}>{icon}</div>{' '}
+                                    <p className={show ? 'show-text' : 'hide-text'}>{name}</p>{' '}
                                 </Link>
-                            </LinkContainer>
+                            </li>
                         )
                     })}
-                </List>
-            </Loged>
-        </NavbarContainer>
+                </ul>
+            </div>
+        </nav>
     )
 }
 export default Navbar
