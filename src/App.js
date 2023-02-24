@@ -10,7 +10,7 @@ class App extends Component {
             <Router>
                 <Navbar />
                 <Routes>
-                    <Route path="/SignIn" element={<Login />} />
+                    <Route path='/SignIn' element={<Login />} />
                 </Routes>
             </Router>
         )
