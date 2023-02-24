@@ -3,8 +3,8 @@
   --clr-primary-1: #222;
   --clr-primary-2: #333;
   /* lighter shades of primary color */
-  --clr-primary-4: hsl(205, 100%, 96%);
-  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-primary-3: #fff;
+  --clr-grey-1: hsl(211, 27%, 70%);
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
