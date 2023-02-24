@@ -3,7 +3,7 @@ import { data } from './data'
 import { loged } from './data'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import {MdMenu} from 'react-icons/md'
+import { MdMenu } from 'react-icons/md'
 import './navbar.css'
 
 const NavbarContainer = styled.nav`
@@ -12,8 +12,9 @@ const NavbarContainer = styled.nav`
   position: fixed;
   z-index: 100;
   background-color: var(--clr-primary-1);
-  alig-items: center;
+  align-items: center;
   justify-content: center;
+  box-shadow: 5px 5px 5px var(--dark-shadow);
 `
 const Loged = styled.div`
   line-height: 3.4rem;
@@ -22,7 +23,14 @@ const Loged = styled.div`
 const List = styled.ul`
   list-style: none;
 `
-const LinkContainer = styled.li``
+const LinkContainer = styled.li`
+  margin: 0 1rem;
+  &:hover {
+    border-radius: 4px;
+    padding: 0.2rem;
+    background-color: var(--dark-shadow);
+  }
+`
 
 const UnLoged = styled.div`
   line-height: 3.4rem;
@@ -36,7 +44,15 @@ const UserPhoto = styled.div`
   margin: 2rem auto;
   border-radius: 20px;
 `
+const Photo = styled.img`
+  justify-content: center;
+  alig-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 20px;
+`
 const UserProfile = styled.div``
+
 const Username = styled.h1`
   color: var(--clr-primary-3);
   text-align: center;
@@ -44,21 +60,29 @@ const Username = styled.h1`
   margin: auto;
   font-seize: 2rem;
 `
-const Menu= styled.button`
-color: var(--clr-primary-3);
-background-color:var(--clr-primary-1);
-font-size:2rem;
-border:none;
+const Menu = styled.button`
+  color: var(--clr-primary-3);
+  background-color: var(--clr-primary-1);
+  font-size: 2rem;
+  border: none;
 `
 function Navbar() {
     return (
         <NavbarContainer>
             <Menu>
-                <MdMenu/>
+                <MdMenu />
             </Menu>
             <UserProfile>
-                <UserPhoto></UserPhoto>
-                <Username>Username</Username>
+                <UserPhoto>
+                    <Link to={'/Profile'}>
+                        <Photo src="https://i.pinimg.com/originals/7b/b0/c7/7bb0c7c3684088adced7c455f9b0a307.jpg" />
+                    </Link>
+                </UserPhoto>
+                <Username>
+                    <Link className="link-list" to={'/Profile'}>
+            Username
+                    </Link>
+                </Username>
             </UserProfile>
 
             <UnLoged>

@@ -6,5 +6,5 @@
   --clr-primary-3: #fff;
   --clr-grey-1: hsl(211, 27%, 70%);
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --dark-shadow: #000
   }
