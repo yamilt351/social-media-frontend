@@ -1,39 +1,57 @@
 import React from "react";
 import { data } from "./data";
 import { loged } from "./data";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+const NavbarContainer = styled.nav`
+  width: 10rem;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  background-color: #222;
+`;
+const Loged = styled.div``;
+const List = styled.ul`
+  list-style: none;
+`;
+const LinkContainer = styled.li`
+
+`;
+
+const UnLoged = styled.div``;
 function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-loged">
-        <ul className="loged-list">
+    <NavbarContainer>
+      <Loged>
+        <List>
           {loged.map((log) => {
             const { id, name, icon, url } = log;
             return (
-              <li key={id} className="orderred-list">
-                <a href={url}>
+              <LinkContainer key={id}>
+                <Link to={url}>
                   {icon} {name}
-                </a>
-              </li>
+                </Link>
+              </LinkContainer>
             );
           })}
-        </ul>
-      </div>
-
-      <div className="navbar-always">
-        <ul className="list">
-          {data.map((datas) => {
-            const { id, name, icon, url } = datas;
+        </List>
+      </Loged>
+      <UnLoged>
+        <List>
+          {data.map((links) => {
+            const { id, name, icon, url } = links;
             return (
-              <li key={id} className="ordered-list">
-                <a href={url}>
+              <LinkContainer key={id}>
+                <Link to={url}>
                   {icon} {name}
-                </a>
-              </li>
+                </Link>
+              </LinkContainer>
             );
           })}
-        </ul>
-      </div>
-    </nav>
+        </List>
+      </UnLoged>
+    </NavbarContainer>
   );
 }
 export default Navbar;

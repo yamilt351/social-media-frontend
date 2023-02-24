@@ -5,11 +5,12 @@ import {
   FaFire,
   FaHome,
   FaReadme,
-  // FaSignInAlt,
+  FaSignInAlt,
   FaUserAlt,
 } from "react-icons/fa";
 
 export const data = [
+	{id:2, name: "Sign In", icon:<FaSignInAlt/>, url:"/SignIn"},
   { id: 1, name: "Home", icon: <FaHome />, url: "/Home" },
   { id: 3, name: "Trending Post", icon: <FaFire />, url: "/Trending" },
 ];
