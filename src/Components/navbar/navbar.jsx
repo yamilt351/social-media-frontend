@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { data } from './data'
 import { loged } from './data'
 import styled from 'styled-components'
@@ -67,9 +67,21 @@ const Menu = styled.button`
   border: none;
 `
 function Navbar() {
+    const [show, setShow] = useState(true)
+
+    function showNabvar() {
+        if (show) {
+            setShow(false)
+			
+        }else{
+
+            setShow(true)
+        }
+    }
+
     return (
-        <NavbarContainer>
-            <Menu>
+        <NavbarContainer className={show? 'navbar-show': 'navbar-hide'}>
+            <Menu onClick={()=>showNabvar()}>
                 <MdMenu />
             </Menu>
             <UserProfile>
