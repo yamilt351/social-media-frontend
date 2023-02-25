@@ -4,7 +4,7 @@ import Navbar from './Components/navbar/navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './Components/LoginScreen/Login'
 import CardContainer from './Components/CardContainer/CardContainer'
-
+import CreatePost from './Components/CreatePost/CreatePost'
 class App extends Component {
     render() {
         return (
@@ -23,7 +23,7 @@ class App extends Component {
                     />
                     <Route
                         path="/Post"
-                        element={<CardContainer type="posts" />}
+                        element={<CreatePost type="posts" />}
                     />
                     <Route
                         path="/Profile"
