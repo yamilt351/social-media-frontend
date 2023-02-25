@@ -5,43 +5,60 @@
   max-width: 18rem;
   background-color: var(--clr-primary-1);
   padding: 1rem;
-  border-radius: 3%;
+  border-radius: 1rem;
   box-shadow: var(--dark-shadow);
-  margin: 4rem 2rem 4rem 4rem;
-  height: auto;
+  height: 90vh;
+  margin: 1rem 0 0 3rem;
 }
 .container h1,
 label,
 input,
+textarea,
 .check {
   color: var(--clr-primary-3);
-  width: 95%;
+  width: 100%;
   background-color: transparent;
 }
-input {
+input,
+textarea {
   border: 1px solid var(--clr-primary-2);
-  padding: 0.5rem 0.3rem;
-  margin: 0.2rem 1rem;
 }
 
 label {
+  line-height: 2rem;
   font-size: var(--media-title);
+}
+input {
+  height: 2rem;
+}
+.button-post {
+  border: none;
+  margin: 2rem 0 1.5rem 0;
+  background-color: var(--clr-grey-1);
+  width: 100%;
+  height: 2.4rem;
 }
 
 @media screen and (min-width: 800px) {
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: 40rem;
-    background-color: var(--clr-primary-1);
-    padding: 1rem;
-    border-radius: 3%;
+    border-radius: 1rem;
     box-shadow: var(--dark-shadow);
-    margin: 4rem auto;
-    height: auto;
+    margin: 1rem auto;
+    max-height: 35rem;
   }
   label {
     font-size: var(--normal-title);
+  }
+  .container h1,
+  label,
+  input,
+  textarea {
+    width: 100%;
+  }
+  .button-post:hover {
+    transition: 0.3s ease-in;
+    background-color: var(--dark-shadow);
+    color: var(--clr-primary-3);
   }
 }
