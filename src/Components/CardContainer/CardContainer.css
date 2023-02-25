@@ -1,0 +1,13 @@
+.section-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+	margin: 0 10rem;
+}
+
+.Page-indicator{
+  margin-left: 5rem;
+	text-transform: uppercase;
+  text-shadow: 1px 2px 0 #969696, 1px 3px 5px #aba8a8;
+	color:var(--clr-grey-1);
+}
