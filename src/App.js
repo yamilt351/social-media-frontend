@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './App.css'
 import Navbar from './Components/navbar/navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Login from './Components/LoginScreen/Login.jsx'
+import Login from './Components/LoginScreen/Login'
+import CardContainer from './Components/CardContainer/CardContainer'
 
 class App extends Component {
     render() {
@@ -10,7 +11,24 @@ class App extends Component {
             <Router>
                 <Navbar />
                 <Routes>
-                    <Route path='/SignIn' element={<Login />} />
+                    <Route path="/SignIn" element={<Login type="signin" secondType="signup" />} />
+                    <Route path="/Home" element={<CardContainer type="random" />} />
+                    <Route
+                        path="/Subscriptions"
+                        element={<CardContainer type="subscriptions" />}
+                    />
+                    <Route
+                        path="/Trending"
+                        element={<CardContainer type="trend" />}
+                    />
+                    <Route
+                        path="/Post"
+                        element={<CardContainer type="posts" />}
+                    />
+                    <Route
+                        path="/Profile"
+                        element={<CardContainer type="profile" />}
+                    />
                 </Routes>
             </Router>
         )
