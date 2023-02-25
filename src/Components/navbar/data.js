@@ -1,12 +1,12 @@
 import React from 'react'
 import {
     FaArrowCircleLeft,
-    FaFileUpload,
     FaFire,
     FaHome,
-    FaReadme,
+    FaHeart,
     FaSignInAlt,
     FaUserAlt,
+    FaFeather,
 } from 'react-icons/fa'
 
 export const data = [
@@ -16,9 +16,9 @@ export const data = [
 ]
 
 export const loged = [
-    { id: 2, name: 'Subscriptions', icon: <FaReadme />, url: '/Subscriptions' },
+    { id: 2, name: 'Subscriptions', icon: <FaHeart />, url: '/Subscriptions' },
     { id: 1, name: 'Profile', icon: <FaUserAlt />, url: '/Profile' },
-    { id: 3, name: 'Create Post', icon: <FaFileUpload />, url: '/Post' },
+    { id: 3, name: 'Create Post', icon: <FaFeather />, url: '/Post' },
     {id:0 ,name:'Log Out',icon:<FaArrowCircleLeft/>, url:'/LogOut'},
 
   

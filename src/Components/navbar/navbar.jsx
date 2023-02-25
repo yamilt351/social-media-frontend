@@ -14,10 +14,11 @@ function Navbar() {
         } else {
             setShow(true)
         }
+     
     }
 
     return (
-        <nav className={show ? 'NavbarContainer' : 'NavbarContainerHide'}>
+        <nav className={show? 'NavbarContainer' : 'NavbarContainerHide'}>
             <button className="Menu" onClick={() => showNabvar()}>
                 <MdMenu />
             </button>

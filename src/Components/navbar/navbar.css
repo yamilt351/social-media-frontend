@@ -1,0 +1,93 @@
+.Username,
+.link-list,
+.Menu{
+  color: var(--clr-primary-3);
+  text-decoration: none;
+}
+.link-list {
+  display: flex;
+  align-items: center;
+}
+
+.link-list,
+.NavbarContainer,
+.Photo,
+.UserPhoto {
+  align-items: center;
+}
+
+
+
+.NavbarContainerHide,
+.NavbarContainer {
+  width: 2.5rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--clr-primary-1);
+  box-shadow: 5px 5px 5px var(--dark-shadow);
+}
+.NavbarContainer {
+  width: 14rem;
+  justify-content: center;
+  font-size: 1rem;
+}
+.Loged,
+.UnLoged {
+  line-height: 1.4rem;
+}
+
+.List {
+  list-style: none;
+}
+.LinkContainer {
+  margin: 0 1rem;
+}
+
+.Username {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.Menu {
+  background-color: var(--clr-primary-1);
+  border: none;
+  font-size: 1.8rem;
+}
+.Photo,
+.UserPhoto {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--clr-grey-1);
+  justify-content: center;
+  border-radius: 20px;
+}
+.UserPhoto {
+  margin: 2rem auto;
+}
+
+.hide-text {
+  display: none;
+}
+.big {
+  font-size: 1.3rem;
+  margin: 0.5rem 0 0.5rem -3rem;
+}
+.normal {
+  margin: 0.5rem 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .Username {
+    font-size: 1.3rem;
+  }
+  .Photo, 
+  .UserPhoto{
+    width: 5rem;
+    height: 5rem;
+  }
+}

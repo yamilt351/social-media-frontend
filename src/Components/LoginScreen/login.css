@@ -1,0 +1,59 @@
+.SignIn-Container,
+.SignIn,
+.SignIn h1,
+.swichter-button,
+.action-button {
+  justify-content: center;
+}
+
+.SignIn-Container {
+  display: flex;
+  margin: auto;
+}
+
+.SignIn {
+  max-width: 12rem;
+  margin:7rem auto;
+}
+.SignIn h1 {
+  text-align: center;
+}
+
+.swichter-button,
+.form input,
+.action-button {
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  margin-top: 0.5rem;
+}
+.swichter-button,
+.action-button,
+.SignIn-Container {
+  align-items: center;
+}
+
+.action-button,
+.swichter-button {
+  margin: 0.6rem;
+  color: var(--clr-primary-3);
+}
+.form input {
+  background-color: var(--clr-grey-1);
+}
+.action-button {
+  background-color: var(--clr-primary-1);
+}
+.swichter-button {
+  background-color: var(--clr-primary-2);
+}
+@media screen and (min-width: 800px) {
+  .SignIn {
+    max-width: 20rem;
+  }
+  .action-button,
+  .swichter-button {
+    width: 9rem;
+	margin: 0.5rem ;
+  }
+}
