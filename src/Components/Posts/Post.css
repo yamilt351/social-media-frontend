@@ -1,0 +1,6 @@
+.post-section{
+		margin: 3rem 5rem;
+		background-color: var(--clr-grey-1);
+		max-width: 50rem;
+		padding: 1rem;
+}
