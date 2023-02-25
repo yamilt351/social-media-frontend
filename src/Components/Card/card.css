@@ -1,0 +1,33 @@
+.card {
+		width: 8rem;
+  margin:  0.5rem;
+	display: block;
+	position: relative;
+}
+
+.autor,
+.Story,
+.CreatedAt {
+  color: var(--clr-primary-1);
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+.autor {
+  font-size: 0.6rem;
+}
+.Story {
+  font-size: 1rem;
+}
+.thumbnail {
+  height: 12rem;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.CreatedAt {
+		margin: 0.2rem;
+  font-size: 0.8rem;
+}
