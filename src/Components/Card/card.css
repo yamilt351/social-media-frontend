@@ -13,12 +13,7 @@
   text-align: center;
   justify-content: center;
 }
-.autor {
-  font-size: 0.6rem;
-}
-.Story {
-  font-size: 1rem;
-}
+
 .thumbnail {
   height: 12rem;
   width: auto;
@@ -29,5 +24,4 @@
 }
 .CreatedAt {
 		margin: 0.2rem;
-  font-size: 0.8rem;
 }

@@ -3,3 +3,26 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+h1 {
+  font-size: var(--media-name-section);
+}
+
+h2 {
+  font-size: var(--media-title);
+}
+h3 {
+  font-size: var(--media-description);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: var(--normal-name-section);
+  }
+
+  h2 {
+    font-size: var(--normal-title);
+  }
+  h3 {
+    font-size: var(--normal-description);
+  }
+}

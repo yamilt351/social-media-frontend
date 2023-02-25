@@ -33,7 +33,7 @@
 .NavbarContainer {
   width: 14rem;
   justify-content: center;
-  font-size: 1rem;
+  font-size: var(--media-title);
 }
 .Loged,
 .UnLoged {
@@ -56,7 +56,7 @@
 .Menu {
   background-color: var(--clr-primary-1);
   border: none;
-  font-size: 1.8rem;
+  font-size: var(--menu-icon-size)
 }
 .Photo,
 .UserPhoto {
@@ -74,7 +74,7 @@
   display: none;
 }
 .big {
-  font-size: 1.3rem;
+  font-size: var(--menu-icon-size);
   margin: 0.5rem 0 0.5rem -3rem;
 }
 .normal {

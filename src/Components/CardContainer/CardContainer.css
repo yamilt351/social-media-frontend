@@ -4,3 +4,9 @@
   flex-wrap: wrap;
 	margin: 0 10rem;
 }
+
+.Page-indicator{
+  margin-left: 5rem;
+	text-transform: uppercase;
+	color:var(--clr-grey-1);
+}

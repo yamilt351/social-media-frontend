@@ -13,7 +13,7 @@
 
 .SignIn {
   max-width: 12rem;
-  margin:7rem auto;
+  margin: 7rem auto;
 }
 .SignIn h1 {
   text-align: center;
@@ -47,6 +47,7 @@
 .swichter-button {
   background-color: var(--clr-primary-2);
 }
+
 @media screen and (min-width: 800px) {
   .SignIn {
     max-width: 20rem;
@@ -54,6 +55,6 @@
   .action-button,
   .swichter-button {
     width: 9rem;
-	margin: 0.5rem ;
+    margin: 0.5rem;
   }
 }

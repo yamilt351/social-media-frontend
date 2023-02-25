@@ -12,14 +12,14 @@ class App extends Component {
                 <Navbar />
                 <Routes>
                     <Route path="/SignIn" element={<Login type="signin" secondType="signup" />} />
-                    <Route path="/Home" element={<CardContainer type="random" />} />
+                    <Route path="/" element={<CardContainer type="random" indicator="Home"/>} />
                     <Route
                         path="/Subscriptions"
-                        element={<CardContainer type="subscriptions" />}
+                        element={<CardContainer type="subscriptions" indicator="Subscriptions"/>}
                     />
                     <Route
                         path="/Trending"
-                        element={<CardContainer type="trend" />}
+                        element={<CardContainer type="trend" indicator="Popular"/>}
                     />
                     <Route
                         path="/Post"
