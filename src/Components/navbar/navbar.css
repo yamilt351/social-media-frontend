@@ -1,12 +1,11 @@
 .Username,
 .link-list,
-.Menu{
+.Menu {
   color: var(--clr-primary-3);
   text-decoration: none;
 }
 .link-list {
   display: flex;
-  align-items: center;
 }
 
 .link-list,
@@ -15,8 +14,6 @@
 .UserPhoto {
   align-items: center;
 }
-
-
 
 .NavbarContainerHide,
 .NavbarContainer {
@@ -56,7 +53,8 @@
 .Menu {
   background-color: var(--clr-primary-1);
   border: none;
-  font-size: var(--menu-icon-size)
+  font-size: var(--menu-icon-size);
+	margin-top: 1rem;
 }
 .Photo,
 .UserPhoto {
@@ -82,12 +80,21 @@
 }
 
 @media screen and (min-width: 800px) {
-  .Username {
-    font-size: 1.3rem;
-  }
-  .Photo, 
-  .UserPhoto{
+  .Photo,
+  .UserPhoto {
     width: 5rem;
     height: 5rem;
   }
+  .LinkContainer:hover {
+    background-color: var(--clr-primary-2);
+  }
+  .big,
+	.Menu{
+    opacity: 0.6;
+  }
+  .big:hover,
+	.Menu:hover{
+    opacity: 1;
+  }	
+
 }
