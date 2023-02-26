@@ -19,10 +19,8 @@ function Comment() {
                 <div className='ago-and-actions'>
                     <p>3 days ago</p>
                     <div className="buttons-user-action">
-                        <button className='interaction'><MdThumbUp />
-100000</button>
-                        <button className='interaction'> <MdThumbDown />
- 3</button>
+                        <button className='interaction'><MdThumbUp /></button>
+                        <button className='interaction'> <MdThumbDown /></button>
                     </div>
                 </div>
             </div>
