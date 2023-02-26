@@ -1,0 +1,24 @@
+.comment {
+    background-color: var(--clr-grey-1);
+    height: max-content;
+    width: 80%;
+}
+.comment-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.comment-form-tx {
+    height: max-content;
+}
+img {
+    height: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.comment-form-btn {
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
