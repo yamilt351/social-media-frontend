@@ -5,12 +5,16 @@
   /* lighter shades of primary color */
   --clr-primary-3: #fff;
   --clr-grey-1: hsl(211, 27%, 70%);
-  --dark-shadow: #000;
   --clr-gray-opa: #727272a1;
+--clr-dark-grey:#6B6B6B;
+	--dark-shadow: #000;
+
+
 
 	/* FONT-SIZE */ 
  
 	--normal-name-section:1.5rem;
+	--normal-p:1.3;
 	--normal-title:1rem;
 	--normal-description: 0.8rem;
 
