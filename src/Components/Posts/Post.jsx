@@ -62,7 +62,7 @@ function Post() {
                 <div className="footer-container">
                     <div className="author-information-container">
                         <img className="image-author-profile" src="adadasdd"></img>
-                        <h2>Autor name</h2>
+                        <h2 className='author-name-display'>Autor name</h2>
                         <div className="channel-information">
                             <p className="parragraph-3">
                                 {' '}

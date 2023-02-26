@@ -3,6 +3,22 @@
   max-width: 80vw;
   padding: 1rem;
 }
+/* BACKGROUND COLOR */
+.like:hover,
+.dislike:hover,
+.hider-button:hover,
+.Subscribe:hover,
+.image-author-profile {
+		  background-color: var(--clr-primary-1);
+
+}
+
+/* FONT SIZE TITLE */
+.parragraph-1,
+.parragraph-2{
+ font-size: var(--media-title);
+
+}
 
 .section-Recommended-container {
   margin: auto;
@@ -13,13 +29,15 @@
   margin: 1rem;
 }
 .parragraph-1 {
-  font-size: var(--media-title);
   font-style: italic;
 }
+
 .parragraph-2 {
-  font-size: var(--media-title);
   font-weight: 600;
 }
+
+.author-name-display,
+.parragraph-3,
 .parragraph-4{
 		display: flex;
 		justify-content:center;
@@ -28,11 +46,11 @@
 }
 .footer-container {
   margin-top: 2rem;
-  width: 100%;
 }
 .author-information-container,
 .channel-information,
 .hider-button,
+.footer-container,
 .user-action-container {
   width: 100%;
 }
@@ -57,7 +75,6 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50px;
-  background-color: var(--clr-primary-1);
 }
 .like,
 .dislike,
@@ -72,14 +89,14 @@
   height: 3rem;
   cursor: pointer;
 }
-.Subscribe {
+.Subscribe{
   background-color: var(--action-color);
 }
+
 .like:hover,
 .dislike:hover,
 .hider-button:hover,
 .Subscribe:hover {
-  background-color: var(--clr-primary-1);
   color: var(--clr-primary-3);
 }
 .like {
@@ -106,6 +123,11 @@
 		display: flex;
 		align-items: center;
 }
+
+
+
+
+/* RESPONSIVE SECTION */ 
 @media screen and (min-width: 820px) {
   .hider-button{
   		display: none;
@@ -149,6 +171,13 @@
   .parragraph-1 {
     font-size: var(--normal-title);
   }
+	.footer-container,
+	.user-action-container{
+			display: flex;
+			align-items: center;
+			margin: auto;
+			justify-content: center;
+	}
 }
 
 @media screen and (max-width: 360px) {
