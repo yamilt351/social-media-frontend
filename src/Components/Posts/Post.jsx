@@ -23,15 +23,15 @@ function Post() {
                             <p className="createdat-style">created at</p>
                         </div>
                         <div className="sinopsis">
-                            <p1>
+                            <p className='parragraph-1'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
                 aliquid quibusdam est expedita incidunt delectus veniam magnam
                 saepe voluptas
-                            </p1>
+                            </p>
                         </div>
                     </div>
                     <div className="body-post">
-                        <p2>
+                        <p className='parragraph-2'>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Dignissimos ipsa, ratione repellendus quidem, obcaecati explicabo
               non nesciunt excepturi porro optio quos voluptatibus perferendis a
@@ -52,7 +52,7 @@ function Post() {
               similique excepturi consequuntur enim et fugiat ad officia facilis
               blanditiis optio magnam, praesentium non veniam Lorem ipsum dolor
               sit amet consectetur
-                        </p2>
+                        </p>
                     </div>
                 </div>
                 <div className="footer-container">
@@ -60,14 +60,14 @@ function Post() {
                         <img className="image-author-profile" src="adadasdd"></img>
                         <h2>Autor name</h2>
                         <div className="channel-information">
-                            <p3>
+                            <p className='parragraph-3'>
                                 {' '}
                                 <FaHeart /> 5000
-                            </p3>
-                            <p4>
+                            </p>
+                            <p className='parragraph-4'>
                                 {' '}
                                 <MdRemoveRedEye /> 3000
-                            </p4>
+                            </p>
                         </div>
                     </div>
 

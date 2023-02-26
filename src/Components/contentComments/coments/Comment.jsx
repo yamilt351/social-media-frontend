@@ -1,12 +1,12 @@
 import React from 'react'
 import './index.css'
 import { MdCoffee } from 'react-icons/md'
-const Comment = () => {
+const CreateComment = () => {
     return (
         <section className="comment">
-            <head className="comment-head">
+            <div className="comment-head">
                 <img className="user-profile-image" alt="" src="adasdasd" />
-            </head>
+            </div>
             <form action="" className="comment-form">
                 <textarea
                     className="coment-form-input"
@@ -22,4 +22,4 @@ const Comment = () => {
     )
 }
 
-export default Comment
+export default CreateComment
