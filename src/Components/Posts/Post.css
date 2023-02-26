@@ -102,7 +102,10 @@
   border: 1px solid var(--clr-primary-3);
 
 }
-
+.Discuss-coffe{
+		display: flex;
+		align-items: center;
+}
 @media screen and (min-width: 820px) {
   .hider-button{
   		display: none;

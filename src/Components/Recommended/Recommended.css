@@ -5,15 +5,22 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.Recommended-section h1{
-		margin: 0rem 8rem;
+.Recommended-section h1 {
+  margin: 2rem 8rem;
+  width: 8rem;
 }
 @media screen and (min-width: 820px) {
   .Recommended-section {
     max-width: 10rem;
     margin-left: 4rem;
   }
-	.Recommended-section h1{
-		margin: 2rem 0rem;
-}
+  .Recommended-section h1 {
+    margin: 2rem 0rem;
+    width: 14rem;
+  }
+  .cards-Recommended-container{
+			margin: 1rem auto;
+			border-radius: 3px;
+			width: 14rem;
+	}
 }

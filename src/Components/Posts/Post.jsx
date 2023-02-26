@@ -8,6 +8,7 @@ import {
     MdThumbDown,
     MdThumbUp,
     MdOutlineBookmark,
+    MdCoffee,
 } from 'react-icons/md'
 function Post() {
     const [hideComments, setHideComments] = useState(false)
@@ -94,7 +95,7 @@ function Post() {
                     </button>
                 </div>
                 <div className={!hideComments ? 'comentary-section' : 'off'}>
-                    <h1> Discuss: </h1>
+                    <h1 className='Discuss-coffe'><MdCoffee/> Discuss: </h1>
                     <ContentComments />
                 </div>
                 <button
