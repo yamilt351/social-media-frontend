@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Recommended from '../Recommended/Recommended'
 import { FaHeart } from 'react-icons/fa'
 import ContentComments from '../contentComments/ContentComments'
@@ -10,6 +10,9 @@ import {
     MdOutlineBookmark,
 } from 'react-icons/md'
 function Post() {
+    const [hideComments, setHideComments] = useState(false)
+    const [hideRecommended, setHideRecommended] = useState(false)
+
     return (
         <section className="section-Recommended-container">
             <div className="post-section">
@@ -23,7 +26,7 @@ function Post() {
                             <p className="createdat-style">created at</p>
                         </div>
                         <div className="sinopsis">
-                            <p className='parragraph-1'>
+                            <p className="parragraph-1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
                 aliquid quibusdam est expedita incidunt delectus veniam magnam
                 saepe voluptas
@@ -31,7 +34,7 @@ function Post() {
                         </div>
                     </div>
                     <div className="body-post">
-                        <p className='parragraph-2'>
+                        <p className="parragraph-2">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Dignissimos ipsa, ratione repellendus quidem, obcaecati explicabo
               non nesciunt excepturi porro optio quos voluptatibus perferendis a
@@ -60,11 +63,11 @@ function Post() {
                         <img className="image-author-profile" src="adadasdd"></img>
                         <h2>Autor name</h2>
                         <div className="channel-information">
-                            <p className='parragraph-3'>
+                            <p className="parragraph-3">
                                 {' '}
                                 <FaHeart /> 5000
                             </p>
-                            <p className='parragraph-4'>
+                            <p className="parragraph-4">
                                 {' '}
                                 <MdRemoveRedEye /> 3000
                             </p>
@@ -83,14 +86,26 @@ function Post() {
               Subscribe <FaHeart />
                         </button>
                     </div>
+                    <button
+                        onClick={() => setHideComments(!hideComments)}
+                        className="hider-button"
+                    >
+                        {!hideComments ? 'Hide Comments' :   'Show Comments'}
+                    </button>
                 </div>
-                <div className="comentary-section">
+                <div className={!hideComments ? 'comentary-section' : 'off'}>
                     <h1> Discuss: </h1>
                     <ContentComments />
                 </div>
+                <button
+                    onClick={() => setHideRecommended(!hideRecommended)}
+                    className="hider-button"
+                >
+                    {!hideRecommended ? 'Hide Recomendations' : 'Show Recomendations'}
+                </button>
             </div>
             <div className="Recommended-section-node">
-                <Recommended />
+                <Recommended prop={hideRecommended} />
             </div>
         </section>
     )

@@ -14,19 +14,25 @@
 }
 .parragraph-1 {
   font-size: var(--media-title);
-	font-style: italic;
+  font-style: italic;
 }
 .parragraph-2 {
   font-size: var(--media-title);
   font-weight: 600;
 }
-
+.parragraph-4{
+		display: flex;
+		justify-content:center;
+		align-items: center;
+		margin: auto;
+}
 .footer-container {
   margin-top: 2rem;
   width: 100%;
 }
 .author-information-container,
 .channel-information,
+.hider-button,
 .user-action-container {
   width: 100%;
 }
@@ -43,9 +49,9 @@
   justify-content: space-between;
   align-items: center;
 }
-.channel-information{
-		display: flex;
-		justify-content: space-between;
+.channel-information {
+  display: flex;
+  justify-content: space-between;
 }
 .image-author-profile {
   width: 3rem;
@@ -58,19 +64,20 @@
 .Subscribe {
   width: 33%;
   justify-content: space-evenly;
-  margin: auto;
+  margin: 0.3rem auto 0 auto;
   background-color: var(--clr-grey-1);
   padding: 0.5rem;
-  border: none;
+  border:none;
   font-size: var(--media-title);
   height: 3rem;
   cursor: pointer;
 }
-.Subscribe{
-		background-color: var(--action-color);
+.Subscribe {
+  background-color: var(--action-color);
 }
 .like:hover,
 .dislike:hover,
+.hider-button:hover,
 .Subscribe:hover {
   background-color: var(--clr-primary-1);
   color: var(--clr-primary-3);
@@ -83,8 +90,23 @@
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+.off {
+  display: none;
+}
+.hider-button {
+  height: 3rem;
+  border-radius: 50px;
+  background-color: var(--clr-primary-2);
+  color: var(--clr-primary-3);
+	margin-top: 0.3rem;
+  border: 1px solid var(--clr-primary-3);
+
+}
 
 @media screen and (min-width: 820px) {
+  .hider-button{
+  		display: none;
+  }
   .like,
   .dislike,
   .Subscribe {
@@ -106,7 +128,6 @@
     column-rule: 2px solid #000000;
     -webkit-column-rule: 2px solid #000000;
     -moz-column-rule: 2px solid #000000;
-		
   }
   .post-section {
     max-width: 50rem;
