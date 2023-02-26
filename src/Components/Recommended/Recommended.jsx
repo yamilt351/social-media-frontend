@@ -4,17 +4,21 @@ import './Recommended.css'
 function Recommended() {
     return (
         <section className="Recommended-section" id="Recommended">
-            <h1>Read more:</h1>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card /> 
-            <Card />
+            <div className="text-Recommended-container">
+                <h1 className='Recomendations'>Read more:</h1>
+            </div>
+            <div className="cards-Recommended-container">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
         </section>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Recommended from '../Recommended/Recommended'
 import { FaHeart } from 'react-icons/fa'
 import './Post.css'
-import { MdRemoveRedEye, MdThumbDown, MdThumbUp } from 'react-icons/md'
+import { MdRemoveRedEye, MdThumbDown, MdThumbUp , MdOutlineBookmark} from 'react-icons/md'
 function Post() {
     return (
         <section className="section-Recommended-container">
@@ -10,7 +10,7 @@ function Post() {
                 <div className="story-author-container">
                     <div className="head-and-description-container">
                         <div className="head">
-                            <h1>Title</h1> <p>created at</p>
+                            <h1> <MdOutlineBookmark/> Title</h1> <p className='createdat-style'>created at</p>
                         </div>
                         <div className="sinopsis">
                             <p1>

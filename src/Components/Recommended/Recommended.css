@@ -1,5 +1,19 @@
-.Recommended-section{
-
-		max-width:10rem;
-		margin-left: 4rem;
+.cards-Recommended-container {
+  display: flex;
+  margin: auto 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.Recommended-section h1{
+		margin: 0rem 8rem;
+}
+@media screen and (min-width: 820px) {
+  .Recommended-section {
+    max-width: 10rem;
+    margin-left: 4rem;
+  }
+	.Recommended-section h1{
+		margin: 2rem 0rem;
+}
 }

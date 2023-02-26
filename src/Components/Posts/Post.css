@@ -9,7 +9,9 @@
   justify-content: center;
   max-width: 70rem;
 }
-
+.sinopsis {
+  margin: 1rem;
+}
 p1 {
   font-size: var(--media-title);
 }
@@ -60,6 +62,12 @@ p2 {
   height: 3rem;
   cursor: pointer;
 }
+.like:hover,
+.dislike:hover,
+.Subscribe:hover {
+  background-color: var(--clr-primary-1);
+  color: var(--clr-primary-3);
+}
 .like {
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -68,6 +76,7 @@ p2 {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
 @media screen and (min-width: 820px) {
   .like,
   .dislike,
@@ -90,6 +99,7 @@ p2 {
     column-rule: 2px solid #000000;
     -webkit-column-rule: 2px solid #000000;
     -moz-column-rule: 2px solid #000000;
+		
   }
   .post-section {
     max-width: 50rem;
@@ -99,21 +109,22 @@ p2 {
   .user-action-container {
     width: 50%;
   }
+  .createdat-style {
+    color: var(--clr-primary-2);
+  }
   p2 {
     font-size: var(--normal-p);
   }
-	p1{
-			font-size: var(--normal-title);
-	}
+  p1 {
+    font-size: var(--normal-title);
+  }
 }
 
-@media screen and (max-width: 360px){
- .like,
+@media screen and (max-width: 360px) {
+  .like,
   .dislike,
   .Subscribe {
     width: 33%;
     font-size: var(--media-description);
-    
   }
-
 }
