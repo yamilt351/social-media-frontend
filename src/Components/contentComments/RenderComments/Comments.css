@@ -1,0 +1,41 @@
+.comment-render {
+  margin-top: 2rem;
+}
+
+.user-data-container {
+  display: flex;
+}
+
+.profile-comment-picture {
+  margin: 0.2rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--clr-primary-1);
+  border-radius: 50px;
+}
+
+.comment-parragraph {
+  font-size: var(--media-description);
+}
+
+.ago-and-actions {
+  font-size: var(--media-description);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.interaction{
+		border: none;
+		background-color: transparent;
+		width: auto;
+
+}
+
+@media screen and (min-width: 820px) {
+  .comment-parragraph {
+    font-size: var(--normal-p);
+  }
+}
