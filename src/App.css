@@ -5,20 +5,23 @@
   /* lighter shades of primary color */
   --clr-primary-3: #fff;
   --clr-grey-1: hsl(211, 27%, 70%);
+  --clr-gray-opa: #727272a1;
+  --clr-dark-grey: #6b6b6b;
   --dark-shadow: #000;
+  --action-color:#5DF67A; 
+  /* FONT-SIZE */
 
-	/* FONT-SIZE */ 
- 
-	--normal-name-section:1.5rem;
-	--normal-title:1rem;
-	--normal-description: 0.8rem;
+  --normal-name-section: 1.5rem;
+  --normal-p: 1.3;
+  --normal-title: 1rem;
+  --normal-description: 0.8rem;
 
-	--media-name-section:1rem;
-	--media-title:0.8rem;
-	--media-description: 0.6rem;
-  
-	/* ICONS SIZE */
+  --media-name-section: 1rem;
+  --media-title: 0.8rem;
+  --media-description: 0.6rem;
 
-	--menu-icon-size:1.3rem;
-	--text-icon-size:1rem;
- }
+  /* ICONS SIZE */
+
+  --menu-icon-size: 1.3rem;
+  --text-icon-size: 1rem;
+}

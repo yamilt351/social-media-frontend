@@ -28,15 +28,18 @@
   box-shadow: 5px 5px 5px var(--dark-shadow);
 }
 .NavbarContainer {
-  width: 14rem;
-  justify-content: center;
+  width: 10rem;
   font-size: var(--media-title);
-}
+	}
 .Loged,
 .UnLoged {
   line-height: 1.4rem;
+
 }
 
+.responsive-navbar{
+margin-left: -2.3rem;
+}
 .List {
   list-style: none;
 }

@@ -1,0 +1,48 @@
+.comment-render {
+  margin-top: 2rem;
+}
+
+.user-data-container {
+  display: flex;
+}
+
+.profile-comment-picture {
+  margin: 0.2rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--clr-primary-1);
+  border-radius: 50px;
+}
+
+.comment-parragraph {
+  font-size: var(--media-description);
+}
+
+.ago-and-actions {
+  font-size: var(--media-description);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.interaction {
+  border: none;
+  background-color: var(--clr-grey-1);
+  min-width: 2rem;
+  margin: 0.4rem;
+	border-radius: 50px;
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 820px) {
+  .comment-parragraph {
+    font-size: var(--normal-p);
+  }
+  .interaction:hover {
+    color: var(--clr-primary-3);
+    background-color: var(--clr-primary-1);
+		cursor: pointer;
+  }
+}

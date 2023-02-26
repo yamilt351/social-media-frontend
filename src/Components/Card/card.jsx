@@ -6,7 +6,7 @@ import './card.css'
 function Card() {
     return (
         <div className="card">
-            <Link className="link-list" to={'/SignIn'}>
+            <Link className="link-list" to={'/Post/id'}>
                 <div className="card-container">
                     <div className="titles">
                         <h2 className="Story">The Broken Justice Arm</h2>
