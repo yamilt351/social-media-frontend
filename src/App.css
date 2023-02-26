@@ -5,8 +5,10 @@
   /* lighter shades of primary color */
   --clr-primary-3: #fff;
   --clr-grey-1: hsl(211, 27%, 70%);
+  --clr-gray-opa: #727272a1;
 --clr-dark-grey:#6B6B6B;
 	--dark-shadow: #000;
+
 
 
 	/* FONT-SIZE */ 
