@@ -85,6 +85,7 @@ function Post() {
                     </div>
                 </div>
                 <div className="comentary-section">
+                    <h1> Discuss: </h1>
                     <ContentComments />
                 </div>
             </div>

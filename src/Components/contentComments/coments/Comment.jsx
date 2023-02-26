@@ -1,18 +1,24 @@
 import React from 'react'
 import './index.css'
-
+import { MdCoffee } from 'react-icons/md'
 const Comment = () => {
     return (
-        <aside className='comment'>
-            <head className='comment-head'>
-                <img src="" alt="" />
-                <span className='username'>username</span>
+        <section className="comment">
+            <head className="comment-head">
+                <img className="user-profile-image" alt="" src="adasdasd" />
             </head>
-            <form action="" className='comment-form'>
-                <input type="text" />
-                <button className='comment-form-btn'>Created at</button>
+            <form action="" className="comment-form">
+                <textarea
+                    className="coment-form-input"
+                    placeholder="What is your opinion?"
+                    rows="5"
+                />
+
+                <button className="comment-form-btn">
+                    <MdCoffee /> Discuss
+                </button>
             </form>
-        </aside>
+        </section>
     )
 }
 

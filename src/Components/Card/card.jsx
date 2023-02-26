@@ -1,6 +1,7 @@
 import React from 'react'
 import { MdThumbUp } from 'react-icons/md'
 import { Link } from 'react-router-dom'
+import './card.css'
 
 function Card() {
     return (
