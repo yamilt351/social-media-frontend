@@ -12,7 +12,7 @@
 .comment-form-tx {
     height: max-content;
 }
-img {
+.user-profile-image {
     height: 20px;
     aspect-ratio: 1;
     border-radius: 50%;

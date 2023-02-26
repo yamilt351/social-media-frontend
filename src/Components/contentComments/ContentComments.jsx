@@ -4,11 +4,11 @@ import './index.css'
 
 
 const ContentComments = () => {
-  return (
-    <div className='content'>
-        <Comment/>
-    </div>
-  )
+    return (
+        <div className='content'>
+            <Comment/>
+        </div>
+    )
 }
 
 export default ContentComments

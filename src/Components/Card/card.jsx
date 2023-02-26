@@ -1,8 +1,6 @@
 import React from 'react'
 import { MdThumbUp } from 'react-icons/md'
 import { Link } from 'react-router-dom'
-import ContentComments from '../contentComments/ContentComments'
-import './card.css'
 
 function Card() {
     return (

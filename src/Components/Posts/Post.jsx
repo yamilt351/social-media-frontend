@@ -1,8 +1,14 @@
 import React from 'react'
 import Recommended from '../Recommended/Recommended'
 import { FaHeart } from 'react-icons/fa'
+import ContentComments from '../contentComments/ContentComments'
 import './Post.css'
-import { MdRemoveRedEye, MdThumbDown, MdThumbUp , MdOutlineBookmark} from 'react-icons/md'
+import {
+    MdRemoveRedEye,
+    MdThumbDown,
+    MdThumbUp,
+    MdOutlineBookmark,
+} from 'react-icons/md'
 function Post() {
     return (
         <section className="section-Recommended-container">
@@ -10,7 +16,11 @@ function Post() {
                 <div className="story-author-container">
                     <div className="head-and-description-container">
                         <div className="head">
-                            <h1> <MdOutlineBookmark/> Title</h1> <p className='createdat-style'>created at</p>
+                            <h1>
+                                {' '}
+                                <MdOutlineBookmark /> Title
+                            </h1>{' '}
+                            <p className="createdat-style">created at</p>
                         </div>
                         <div className="sinopsis">
                             <p1>
@@ -50,8 +60,14 @@ function Post() {
                         <img className="image-author-profile" src="adadasdd"></img>
                         <h2>Autor name</h2>
                         <div className="channel-information">
-                            <p3> <FaHeart /> 5000</p3>
-                            <p4> <MdRemoveRedEye/> 3000</p4>
+                            <p3>
+                                {' '}
+                                <FaHeart /> 5000
+                            </p3>
+                            <p4>
+                                {' '}
+                                <MdRemoveRedEye /> 3000
+                            </p4>
                         </div>
                     </div>
 
@@ -67,6 +83,9 @@ function Post() {
               Subscribe <FaHeart />
                         </button>
                     </div>
+                </div>
+                <div className="comentary-section">
+                    <ContentComments />
                 </div>
             </div>
             <div className="Recommended-section-node">
