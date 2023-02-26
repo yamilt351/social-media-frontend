@@ -1,6 +1,59 @@
-.post-section{
-		margin: 3rem 5rem;
-		background-color: var(--clr-grey-1);
-		max-width: 50rem;
-		padding: 1rem;
+.post-section {
+  max-width: 50rem;
+  padding: 1rem;
+}
+
+.section-Recommended-container {
+  display: flex;
+  margin: auto;
+  /* align-items: center; */
+  justify-content: center;
+  max-width: 70rem;
+}
+
+.body-post {
+  column-count: 2;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-gap: 15px;
+  -webkit-column-gap: 15px;
+  -moz-column-gap: 15px;
+  column-rule: 2px solid #000000;
+  -webkit-column-rule: 2px solid #000000;
+  -moz-column-rule: 2px solid #000000;
+}
+
+.footer-container {
+		margin-top: 1rem;
+  background-color: var(--clr-grey-1);
+  width: 100%;
+  display: flex;
+}
+.author-information-container {
+  display: flex;
+  width: 50%;
+  background-color: yellow;
+  margin: auto;
+}
+.channel-information {
+  width: 50%;
+  background-color: red;
+  margin: auto;
+}
+.user-action-container {
+  width: 50%;
+  background-color: green
+}
+.image-author-profile{
+		width: 4rem;
+		height: 4rem;
+		border-radius: 30px;
+		background-color: var(--clr-primary-1);
+}
+.like,
+.dislike,
+.Subscribe {
+  width: 30%;
+  justify-content: space-evenly;
+  margin: 1.4rem 0.3rem;
 }
