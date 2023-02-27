@@ -1,8 +1,28 @@
+.profile-container-main,
+.user-followed-container,
+.user-information-container,
+.user-image-container,
+.user-data-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
 
-.profile-container-main h1{
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-       margin: 8rem auto;
+.user-profile-window-container,
+.following-users {
+  width: 45vw;
+}
+.user-followed-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.user-profile-window-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+}
+.following-users {
+margin: auto 3rem 0 auto;
 }
