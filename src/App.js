@@ -7,6 +7,7 @@ import CardContainer from './Components/CardContainer/CardContainer'
 import CreatePost from './Components/CreatePost/CreatePost'
 import Post from './Components/Posts/Post'
 import Searchbar from './Components/SearchBar/Searchbar'
+import Profile from './Components/Profile/Profile'
 class App extends Component {
     render() {
         return (
@@ -33,7 +34,7 @@ class App extends Component {
                         element={<CardContainer type="trend" indicator="Popular" />}
                     />
                     <Route path="/Post" element={<CreatePost type="posts" />} />
-                    <Route path="/Profile" element={<CardContainer type="profile" />} />
+                    <Route path="/Profile" element={<Profile type="profile" />} />
                     <Route path="/Post/id" element={<Post />} />
                 </Routes>
             </Router>
