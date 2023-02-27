@@ -1,15 +1,15 @@
 .comment {
   margin: 3rem auto;
-  display: flex;
+   height: max-content;
+}
+.comment,
+.comment-head{
+ display: flex;
   align-items: center;
   justify-content: center;
-  height: max-content;
 }
 .comment-head {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+ gap: 20px;
 }
 .comment-form-tx {
   height: max-content;
@@ -30,12 +30,11 @@
 .comment-form {
   width: 100%;
 }
-
 .coment-form-input {
   max-height: 90vh;
   overflow: visible;
   outline-offset: initial;
-  color: black;
+  color: var(--clr-primary-1);
 }
 @media screen and (min-width: 820px) {
   .comment-form {
@@ -46,11 +45,6 @@
 	 color:var(--clr-primary-3)
   }
 	
-  .user-profile-image {
-    height: 4rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background-color: var(--clr-primary-1);
-  }
+
 
 }

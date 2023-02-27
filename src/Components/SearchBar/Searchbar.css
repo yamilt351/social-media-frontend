@@ -1,0 +1,40 @@
+.navbar-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.full-navbar-container {
+  background-color: var(--clr-primary-1);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  z-index: 1;
+}
+.navbar-container {
+  width: 70%;
+  background-color: var(--clr-primary-3);
+  border-radius: 50px 0 0 50px;
+  border: none;
+}
+.search-button {
+  border-radius: 0 50px 50px 0;
+  border: none;
+  background-color: var(--action-color);
+  height: 2.1rem;
+}
+.search-bar {
+  color: var(--clr-primary-1);
+}
+
+.icon-svg {
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 820px) {
+  .navbar-container {
+    width: 30rem;
+  }
+}

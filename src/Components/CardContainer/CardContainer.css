@@ -2,11 +2,26 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-	margin: 0 10rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-.Page-indicator{
-  margin-left: 11rem;
-	text-transform: uppercase;
-	color:var(--clr-grey-1);
+.Page-indicator {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 6rem 0;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: var(--clr-grey-1);
+}
+
+@media screen and (min-width: 820px) {
+  .Page-indicator {
+    margin: 6rem 0;
+  }
+  .section-card-container {
+    margin: auto 10rem;
+  }
 }
