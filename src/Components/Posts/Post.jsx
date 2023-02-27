@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Recommended from '../Recommended/Recommended'
 import { FaHeart } from 'react-icons/fa'
 import ContentComments from '../contentComments/ContentComments'
+import { Link } from 'react-router-dom'
 import './Post.css'
 import {
     MdRemoveRedEye,
@@ -42,47 +43,52 @@ function Post() {
               fugit incidunt modi iste magnam atque. Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Dolorum, sed soluta qui repudiandae
               quas similique excepturi consequuntur enim et fugiat ad officia
-          
                         </p>
                     </div>
                 </div>
                 <div className="footer-container">
                     <div className="author-information-container">
-                        <img className="image-author-profile" src="adadasdd"></img>
-                        <h2 className='author-name-display'>Autor name</h2>
+                        <Link to={'/Profile'}   className="link-list-user">
+                            <img className="image-author-profile" src="adadasdd"></img>
+                        </Link>
+                        <Link to={'/Profile'} className="link-list-user">
+                            <h2 className="author-name-display">Autor name</h2>
+                        </Link>
+
                         <div className="channel-information">
                             <p className="parragraph-3">
                                 {' '}
-                                <FaHeart className="icon-user-info"/>   5000
+                                <FaHeart className="icon-user-info" /> 5000
                             </p>
                             <p className="parragraph-4">
                                 {' '}
-                                <MdRemoveRedEye className='icon-user-info'/>  3000
+                                <MdRemoveRedEye className="icon-user-info" /> 3000
                             </p>
                         </div>
                     </div>
 
                     <div className="user-action-container">
                         <button className="like">
-                            <MdThumbUp /> like 
+                            <MdThumbUp /> like
                         </button>
                         <button className="dislike">
-                            
                             <MdThumbDown /> dislike
                         </button>
                         <button className="Subscribe">
-                            <FaHeart /> Subscribe 
+                            <FaHeart /> Subscribe
                         </button>
                     </div>
                     <button
                         onClick={() => setHideComments(!hideComments)}
                         className="hider-button"
                     >
-                        {!hideComments ? 'Hide Comments' :   'Show Comments'}
+                        {!hideComments ? 'Hide Comments' : 'Show Comments'}
                     </button>
                 </div>
                 <div className={!hideComments ? 'comentary-section' : 'off'}>
-                    <h1 className='Discuss-coffe'><MdCoffee/> Discuss: </h1>
+                    <h1 className="Discuss-coffe">
+                        <MdCoffee /> Discuss:{' '}
+                    </h1>
                     <ContentComments />
                 </div>
                 <button

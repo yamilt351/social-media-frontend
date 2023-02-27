@@ -12,7 +12,10 @@
 .image-author-profile {
   background-color: var(--clr-primary-1);
 }
-
+.link-list-user{
+		color:var(--clr-primary-1);
+		text-decoration: none;
+}
 /* FONT SIZE TITLE */
 .parragraph-1,
 .parragraph-2 {
