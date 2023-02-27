@@ -33,14 +33,26 @@
   height: 8rem;
   width: 8rem;
 }
+.user-profile-window-container {
+  margin: auto;
+}
 .user-information-container {
   height: 100vh;
+  background-color: var(--clr-grey-1);
 }
 .following-users,
-.user-information-container {
-  background-color: #f5f5f5;
+.user-profile-window-container {
+  background-color: var(--clr-primary-5);
+
+  box-shadow: 6px 6px 5px 0px rgba(168, 168, 168, 1);
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(168, 168, 168, 1);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(168, 168, 168, 1);
+ 
 }
-.following-users{
-		margin-top: 3rem;
-		padding: 2rem;
+.following-users {
+  margin-top: 3rem;
+  padding: 2rem;
+}
+.username-profile {
+  text-transform: uppercase;
 }

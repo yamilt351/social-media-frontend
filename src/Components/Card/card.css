@@ -2,6 +2,7 @@
   width: 8rem;
   margin: 0.5rem;
   display: block;
+	background-color: var(--clr-primary-4);
   position: relative;
   -webkit-box-shadow: 5px 5px 0px 0px var(--clr-primary-1),
     10px 10px 0px 0px var(--clr-grey-1), 5px 5px 15px 5px rgba(0, 0, 0, 0);

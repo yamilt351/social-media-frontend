@@ -1,6 +1,6 @@
 import React from 'react'
 import './Profile.css'
-import Card from '../Card/card.jsx'
+import Card from '../Card/card'
 function Profile() {
     return (
         <section className="profile-container-main" id="profile">
@@ -36,9 +36,20 @@ function Profile() {
                 </div>
             </section>
             <section className="following-users">
-                <h1 className="following-users-title">following:</h1>
+                <h1 className="following-users-title">FOLLOWING:</h1>
                 <div className="following-users-container">
                     <div className="user-followed-container">
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
                         <Card />
                         <Card />
                         <Card />

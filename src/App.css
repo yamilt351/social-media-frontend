@@ -4,6 +4,8 @@
   --clr-primary-2: #333;
   /* lighter shades of primary color */
   --clr-primary-3: #fff;
+	--clr-primary-4:#F8F8FF;
+	--clr-primary-5:#F5F5F5;
   --clr-grey-1: hsl(211, 27%, 70%);
   --clr-gray-opa: #727272a1;
   --clr-dark-grey: #6b6b6b;
