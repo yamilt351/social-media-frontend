@@ -6,11 +6,13 @@ import Login from './Components/LoginScreen/Login'
 import CardContainer from './Components/CardContainer/CardContainer'
 import CreatePost from './Components/CreatePost/CreatePost'
 import Post from './Components/Posts/Post'
+import Searchbar from './Components/SearchBar/Searchbar'
 class App extends Component {
     render() {
         return (
             <Router>
                 <Navbar />
+                <Searchbar />
                 <Routes>
                     <Route
                         path="/SignIn"

@@ -42,20 +42,7 @@ function Post() {
               fugit incidunt modi iste magnam atque. Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Dolorum, sed soluta qui repudiandae
               quas similique excepturi consequuntur enim et fugiat ad officia
-              facilis blanditiis optio magnam, praesentium non veniam Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-              obcaecati expedita ipsa delectus asperiores sed, cumque ea nihil
-              similique beatae eius ab facere eaque assumenda natus sapiente cum
-              laboriosam ipsam. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Dignissimos ipsa, Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Dignissimos ipsa, ratione
-              repellendus quidem, obcaecati explicabo non nesciunt excepturi
-              porro optio quos voluptatibus perferendis a fugit incidunt modi
-              iste magnam atque. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Dolorum, sed soluta qui repudiandae quas
-              similique excepturi consequuntur enim et fugiat ad officia facilis
-              blanditiis optio magnam, praesentium non veniam Lorem ipsum dolor
-              sit amet consectetur
+          
                         </p>
                     </div>
                 </div>
@@ -66,25 +53,25 @@ function Post() {
                         <div className="channel-information">
                             <p className="parragraph-3">
                                 {' '}
-                                <FaHeart /> 5000
+                                <FaHeart className="icon-user-info"/>   5000
                             </p>
                             <p className="parragraph-4">
                                 {' '}
-                                <MdRemoveRedEye /> 3000
+                                <MdRemoveRedEye className='icon-user-info'/>  3000
                             </p>
                         </div>
                     </div>
 
                     <div className="user-action-container">
                         <button className="like">
-              like <MdThumbUp />{' '}
+                            <MdThumbUp /> like 
                         </button>
                         <button className="dislike">
-                            {' '}
-              dislike <MdThumbDown />
+                            
+                            <MdThumbDown /> dislike
                         </button>
                         <button className="Subscribe">
-              Subscribe <FaHeart />
+                            <FaHeart /> Subscribe 
                         </button>
                     </div>
                     <button

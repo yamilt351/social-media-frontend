@@ -1,4 +1,5 @@
 .post-section {
+  margin-top: 4rem;
   margin-left: 2rem;
   max-width: 80vw;
   padding: 1rem;
@@ -68,6 +69,8 @@
 .channel-information {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: auto;
 }
 .image-author-profile {
   width: 3rem;
@@ -129,12 +132,10 @@
   .like,
   .dislike,
   .Subscribe {
-    width: 33%;
+    width: 33.3%;
     font-size: var(--normal-title);
   }
-  .section-Recommended-container,
-  .author-information-container,
-  .footer-container {
+  .section-Recommended-container {
     display: flex;
   }
   .body-post {
@@ -165,13 +166,15 @@
   .parragraph-1 {
     font-size: var(--normal-title);
   }
+
   .footer-container,
-  .user-action-container {
+  .user-action-container,
+  .author-information-container {
     display: flex;
     align-items: center;
-    margin: auto;
     justify-content: center;
-  }
+   }
+
 }
 
 @media screen and (max-width: 360px) {
