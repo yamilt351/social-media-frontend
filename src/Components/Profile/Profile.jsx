@@ -10,11 +10,11 @@ function Profile() {
                         <img
                             src="adasd"
                             alt="user-image-profile"
-                            className="user-image-profile"
+                            className="user-image-profile-following"
                         />
                     </div>
-                    <div className="user-data-container">
-                        <div className="user contact-information-container">
+                    <div className="user-data-container-profile">
+                        <div className="user-contact-information-container">
                             <div className="username-container-profile">
                                 <h1 className="username-profile">username</h1>
                             </div>
@@ -39,6 +39,9 @@ function Profile() {
                 <h1 className="following-users-title">following:</h1>
                 <div className="following-users-container">
                     <div className="user-followed-container">
+                        <Card />
+                        <Card />
+                        <Card />
                         <Card />
                         <Card />
                         <Card />
