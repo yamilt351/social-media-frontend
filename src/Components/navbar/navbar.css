@@ -3,6 +3,7 @@
 .Menu {
   color: var(--clr-primary-3);
   text-decoration: none;
+  cursor: pointer;
 }
 .link-list {
   display: flex;
@@ -23,7 +24,7 @@
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 2;
   background-color: var(--clr-primary-1);
 }
 .NavbarContainer {
@@ -33,7 +34,6 @@
 .Loged,
 .UnLoged {
   line-height: 1.4rem;
-
 }
 
 .responsive-navbar{
@@ -57,6 +57,7 @@ margin-left: -2.3rem;
   border: none;
   font-size: var(--menu-icon-size);
 	margin-top: 1rem;
+  cursor: pointer;
 }
 .Photo,
 .UserPhoto {
@@ -98,5 +99,29 @@ margin-left: -2.3rem;
 	.Menu:hover{
     opacity: 1;
   }	
+
+}
+
+@media screen and (max-width: 768px) {
+  .NavbarContainerHide,
+  .NavbarContainer {
+    width: 100vw;
+    height: 7%;
+    bottom: 0;
+    top:94%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .NavbarContainer {
+    height: 9rem;
+    top: 95%;
+  }
+  .List {
+    display: flex;
+  }
+  .Menu {
+    display: none;
+  }
 
 }

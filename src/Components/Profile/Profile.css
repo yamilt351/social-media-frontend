@@ -4,9 +4,10 @@
 .user-image-container,
 .user-data-container-profile {
   display: flex;
-  margin: auto;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  text-align: c;
 }
 
 .user-profile-window-container,
@@ -29,9 +30,11 @@
 
 .user-image-profile-following {
   background-color: var(--clr-primary-1);
-  border-radius: 50px;
+  border-radius: 50%;
   height: 8rem;
   width: 8rem;
+  text-align: center;
+  color: white;
 }
 .user-profile-window-container {
   margin: auto;
@@ -42,11 +45,7 @@
 }
 .following-users,
 .user-profile-window-container {
-  background-color: var(--clr-primary-5);
-
   box-shadow: 6px 6px 5px 0px rgba(168, 168, 168, 1);
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(168, 168, 168, 1);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(168, 168, 168, 1);
  
 }
 .following-users {

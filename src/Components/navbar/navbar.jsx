@@ -2,18 +2,15 @@ import React, { useState } from 'react'
 import { data } from './data'
 import { loged } from './data'
 import { Link } from 'react-router-dom'
-import { MdMenu } from 'react-icons/md'
 import './navbar.css'
+import { MdMenu } from 'react-icons/md'
 
 function Navbar() {
-    const [show, setShow] = useState(true)
 
-    function showNabvar() {
-        if (show) {
-            setShow(false)
-        } else {
-            setShow(true)
-        }
+    const [show, setShow] = useState(false)
+
+    const showNabvar = () => {
+        show ? setShow(false) : setShow(true)
     }
 
     return (
@@ -21,7 +18,6 @@ function Navbar() {
             <button className="Menu" onClick={() => showNabvar()}>
                 <MdMenu />
             </button>
-
             <div className="UserProfile">
                 <div className={show ? 'UserPhoto' : 'hide-text'}>
                     <Link to={'/Profile'}>
@@ -51,10 +47,6 @@ function Navbar() {
                                 </li>
                             )
                         })}
-                    </ul>
-                </div>
-                <div className="Loged">
-                    <ul className="List">
                         {loged.map((log) => {
                             const { id, name, icon, url } = log
                             return (

@@ -15,15 +15,14 @@ function Login() {
 
     return (
         <section id="SignIn" className="SignIn">
-            <h1>Welcome!</h1>
-
             <div className="SignIn-Container">
+                <h1>Welcome!</h1>
                 {register ? (
                     <div className="form-container signUp">
                         <form className="form">
-                            <input placeholder="email" type="email"></input>
-                            <input placeholder="username" type="text"></input>
-                            <input type="password" placeholder="password" />
+                            <input placeholder="E-mail" type="email"></input>
+                            <input placeholder="Username" type="text"></input>
+                            <input placeholder="Password" type="password" />
                         </form>
                         <button type="submit" className="action-button">
                             {' '}
@@ -43,7 +42,7 @@ function Login() {
                             {' '}
               Login{' '}
                         </button>
-                        <button className="swichter-button" onClick={() => swicht()}>
+                        <button className="swichter-button " onClick={() => swicht()}>
                             {register ? 'Sign In' : 'Sign Up!'}
                         </button>
                     </div>

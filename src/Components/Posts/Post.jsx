@@ -47,35 +47,33 @@ function Post() {
                     </div>
                 </div>
                 <div className="footer-container">
-                    <div className="author-information-container">
-                        <Link to={'/Profile'}   className="link-list-user">
-                            <img className="image-author-profile" src="adadasdd"></img>
-                        </Link>
-                        <Link to={'/Profile'} className="link-list-user">
-                            <h2 className="author-name-display">Autor name</h2>
-                        </Link>
-
-                        <div className="channel-information">
-                            <p className="parragraph-3">
-                                {' '}
-                                <FaHeart className="icon-user-info" /> 5000
-                            </p>
-                            <p className="parragraph-4">
-                                {' '}
-                                <MdRemoveRedEye className="icon-user-info" /> 3000
-                            </p>
+                    <div className="footer__items__center bg-color">
+                        <div className="footer__items__center gap">
+                            <Link to={'/Profile'}   className="link-list-user">
+                                <img className="image-author-profile" src="adadasdd"></img>
+                            </Link>
+                            <Link to={'/Profile'} className="link-list-user">
+                                <h2 className="author-name-display">Autor name</h2>
+                            </Link>    
+                        </div>
+                        <div className="footer__items__center gap">
+                            <FaHeart className="icon-user-info" /> 
+                            <p className="parragraph-3">5000</p>
+                        </div>
+                        <div className="footer__items__center gap">
+                            <MdRemoveRedEye className="icon-user-info" /> 
+                            <p className="parragraph-4">3000</p>
                         </div>
                     </div>
-
-                    <div className="user-action-container">
-                        <button className="like">
-                            <MdThumbUp /> like
+                    <div className="footer__items__center">
+                        <button className="like footer__items__center gap">
+                            <MdThumbUp /> <span>like</span>
                         </button>
-                        <button className="dislike">
-                            <MdThumbDown /> dislike
+                        <button className="dislike footer__items__center gap">
+                            <MdThumbDown /> <span>dislike</span>
                         </button>
-                        <button className="Subscribe">
-                            <FaHeart /> Subscribe
+                        <button className="Subscribe footer__items__center gap">
+                            <FaHeart /> <span>Subscribe</span>
                         </button>
                     </div>
                     <button
