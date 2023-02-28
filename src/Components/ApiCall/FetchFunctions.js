@@ -1,1 +1,1 @@
-export const http = 'https://rest-api-social.onrender.com/api'
+export const http = 'https://rest-api-social.onrender.com/api/'
