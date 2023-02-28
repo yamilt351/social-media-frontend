@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import './card.css'
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 
-function Card({ title, description, like,  userId,key }) {
+function Card({ title, description, like,  userId,id }) {
     return (
-        <div className="card" key={key}>
+        <div className="card" key={id}>
             <Link className="link-list" to={`/Post/${userId}`}>
                 <div className="card-container">
                     <div className="titles">

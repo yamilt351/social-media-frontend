@@ -30,7 +30,7 @@ function CardContainer({ indicator, type }) {
                 return (
                     <div className="section-card-container">
                         <Card
-                            key={id}
+                            id={id}
                             type={type}
                             userId={userId}
                             createdAt={createdAt}
