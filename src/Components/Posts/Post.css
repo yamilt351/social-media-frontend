@@ -12,12 +12,18 @@
 .image-author-profile {
   background-color: var(--clr-primary-1);
 }
+<<<<<<< HEAD
 .link-list-user{
 		color:var(--clr-primary-1);
 		text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
+=======
+.link-list-user {
+  color: var(--clr-primary-1);
+  text-decoration: none;
+>>>>>>> b29fb52 (css-responsive-fixing)
 }
 /* FONT SIZE TITLE */
 .parragraph-1,
@@ -154,11 +160,16 @@
   .footer-container {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     justify-content: space-evenly;
     gap: 10px;
     width: 100%;
    }
 
+=======
+    justify-content: center;
+  }
+>>>>>>> b29fb52 (css-responsive-fixing)
 }
 
 @media screen and (max-width: 768px) {
@@ -176,4 +187,7 @@
   .hider-button {
     height: 2rem;
   }
+	.container{
+			margin:7rem 1rem 0 3.4rem ;
+	}
 }
