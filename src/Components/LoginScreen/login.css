@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .SignIn{
   width: 100vw;
   height: 100vh;
@@ -61,3 +62,26 @@
   width: 90%;
 }
 }
+=======
+.login-screen,
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+}
+.login-screen{
+		margin: 15rem;
+}
+.form-container{
+		background-color: var(--clr-grey-1);
+		padding: 2rem;
+		border-radius: 1rem;
+		width: 25rem;
+}
+.buttons-container{
+width: 100%;
+}
+
+
+>>>>>>> 4ad3eda (axios-installed)
