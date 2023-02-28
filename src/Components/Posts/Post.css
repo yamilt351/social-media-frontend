@@ -138,7 +138,7 @@
   .section-Recommended-container {
     display: flex;
   }
-  .body-post {
+  /* .body-post {
     column-count: 2;
     -webkit-column-count: 2;
     -moz-column-count: 2;
@@ -148,7 +148,7 @@
     column-rule: 2px solid var(--clr-primary-1);
     -webkit-column-rule: 2px solid var(--clr-primary-1);
     -moz-column-rule: 2px solid var(--clr-primary-1);
-  }
+  } */
   .post-section {
     max-width: 50rem;
   }
