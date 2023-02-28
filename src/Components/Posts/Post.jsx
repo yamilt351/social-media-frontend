@@ -47,15 +47,14 @@ function Post() {
                     </div>
                 </div>
                 <div className="footer-container">
-                    <div className="author-information-container">
+                    <div className="footer__items__center bg-color">
                         <Link to={'/Profile'}   className="link-list-user">
                             <img className="image-author-profile" src="adadasdd"></img>
                         </Link>
                         <Link to={'/Profile'} className="link-list-user">
                             <h2 className="author-name-display">Autor name</h2>
                         </Link>
-
-                        <div className="channel-information">
+                        <div className="footer__items__center ">
                             <p className="parragraph-3">
                                 {' '}
                                 <FaHeart className="icon-user-info" /> 5000
@@ -66,16 +65,15 @@ function Post() {
                             </p>
                         </div>
                     </div>
-
-                    <div className="user-action-container">
-                        <button className="like">
-                            <MdThumbUp /> like
+                    <div className="footer__items__center">
+                        <button className="like footer__items__center gap">
+                            <MdThumbUp /> <span>like</span>
                         </button>
-                        <button className="dislike">
-                            <MdThumbDown /> dislike
+                        <button className="dislike footer__items__center gap">
+                            <MdThumbDown /> <span>dislike</span>
                         </button>
-                        <button className="Subscribe">
-                            <FaHeart /> Subscribe
+                        <button className="Subscribe footer__items__center gap">
+                            <FaHeart /> <span>Subscribe</span>
                         </button>
                     </div>
                     <button
