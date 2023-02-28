@@ -1,45 +1,48 @@
-.SignIn-Container,
-.SignIn,
-.SignIn h1,
-.swichter-button,
-.action-button {
-  justify-content: center;
-}
-
-.SignIn-Container {
+.SignIn{
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  margin: auto;
-}
+  justify-content: center;
+  align-items: center;
 
-.SignIn {
-  max-width: 12rem;
-  margin: 7rem auto;
 }
-.SignIn h1 {
+.SignIn-Container {
+  width: 50%;
   text-align: center;
 }
 
-.swichter-button,
-.form input,
 .action-button {
-  padding: 0.5rem;
-  width: 100%;
-  border: none;
-  margin-top: 0.5rem;
-}
-.swichter-button,
-.action-button,
-.SignIn-Container {
-  align-items: center;
-}
-
-.action-button,
-.swichter-button {
-  margin: 0.6rem;
   color: var(--clr-primary-3);
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 .form input {
   background-color: var(--clr-grey-1);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+.form input:focus {
+  box-shadow: 0px 0px 9px 0px #141414eb
+}
+.action-button,
+.swichter-button {
+  width: 47%;
+  padding: 10px;
+  margin: 5px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.action-button:hover,
+.swichter-button:hover {
+  transform: scale(1.05);
 }
 .action-button {
   background-color: var(--clr-primary-1);
@@ -48,7 +51,7 @@
   background-color: var(--clr-primary-2);
 }
 
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
   .SignIn {
     max-width: 20rem;
   }
@@ -57,4 +60,4 @@
     width: 9rem;
     margin: 0.5rem;
   }
-}
+} */

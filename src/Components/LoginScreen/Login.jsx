@@ -15,9 +15,8 @@ function Login() {
 
     return (
         <section id="SignIn" className="SignIn">
-            <h1>Welcome!</h1>
-
             <div className="SignIn-Container">
+                <h1>Welcome!</h1>
                 {register ? (
                     <div className="form-container signUp">
                         <form className="form">
@@ -43,7 +42,7 @@ function Login() {
                             {' '}
               Login{' '}
                         </button>
-                        <button className="swichter-button" onClick={() => swicht()}>
+                        <button className="swichter-button " onClick={() => swicht()}>
                             {register ? 'Sign In' : 'Sign Up!'}
                         </button>
                     </div>
