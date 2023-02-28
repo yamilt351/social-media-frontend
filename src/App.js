@@ -9,11 +9,13 @@ import Post from './Components/Posts/Post'
 import Searchbar from './Components/SearchBar/Searchbar'
 import Profile from './Components/Profile/Profile'
 class App extends Component {
+
     render() {
+ 
         return (
             <Router>
-                <Navbar />
                 <Searchbar />
+                <Navbar />
                 <Routes>
                     <Route
                         path="/SignIn"
