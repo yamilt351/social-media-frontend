@@ -28,9 +28,8 @@ function CardContainer({ indicator, type }) {
             {article.map((value) => {
                 const { id, userId, createdAt, description, title, like } = value
                 return (
-                    <div className="section-card-container">
+                    <div className="section-card-container" key={id}>
                         <Card
-                            id={id}
                             type={type}
                             userId={userId}
                             createdAt={createdAt}
