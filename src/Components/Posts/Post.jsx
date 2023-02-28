@@ -48,21 +48,21 @@ function Post() {
                 </div>
                 <div className="footer-container">
                     <div className="footer__items__center bg-color">
-                        <Link to={'/Profile'}   className="link-list-user">
-                            <img className="image-author-profile" src="adadasdd"></img>
-                        </Link>
-                        <Link to={'/Profile'} className="link-list-user">
-                            <h2 className="author-name-display">Autor name</h2>
-                        </Link>
-                        <div className="footer__items__center ">
-                            <p className="parragraph-3">
-                                {' '}
-                                <FaHeart className="icon-user-info" /> 5000
-                            </p>
-                            <p className="parragraph-4">
-                                {' '}
-                                <MdRemoveRedEye className="icon-user-info" /> 3000
-                            </p>
+                        <div className="footer__items__center gap">
+                            <Link to={'/Profile'}   className="link-list-user">
+                                <img className="image-author-profile" src="adadasdd"></img>
+                            </Link>
+                            <Link to={'/Profile'} className="link-list-user">
+                                <h2 className="author-name-display">Autor name</h2>
+                            </Link>    
+                        </div>
+                        <div className="footer__items__center gap">
+                            <FaHeart className="icon-user-info" /> 
+                            <p className="parragraph-3">5000</p>
+                        </div>
+                        <div className="footer__items__center gap">
+                            <MdRemoveRedEye className="icon-user-info" /> 
+                            <p className="parragraph-4">3000</p>
                         </div>
                     </div>
                     <div className="footer__items__center">
