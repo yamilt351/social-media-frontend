@@ -44,7 +44,7 @@ function CardContainer({ indicator, type }) {
                 })}
             </div>
         </>
-    )
+    );
 }
 export default CardContainer
 

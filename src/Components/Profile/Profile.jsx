@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react'
 import './Profile.css'
 import Card from '../Card/card'
