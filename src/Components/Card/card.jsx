@@ -7,7 +7,7 @@ import { URL } from '../../urlStore'
 import './card.css'
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 /*eslint linebreak-style: ["error", "unix"]*/
-function Card({ userId, like, title, createdAt, key }) {
+function Card({ userId, like, title, createdAt, id }) {
     const [image, setImage] = useState({})
     const [user, setUser] = useState({})
 
@@ -30,7 +30,7 @@ function Card({ userId, like, title, createdAt, key }) {
     }, [user.imageId])
 
     return (
-        <Link className="link-list" to={`/Post/${key}`} key={key}>
+        <Link className="link-list" to={`/Post/${id}`} key={id}>
             <div className="card-container">
                 <div className="titles">
                     <h2 className="Story">{title}</h2>

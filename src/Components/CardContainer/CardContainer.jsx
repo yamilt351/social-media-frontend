@@ -23,13 +23,13 @@ function CardContainer({ indicator, type }) {
             <h1 className="Page-indicator">{indicator}</h1>
             <div className="section-card-container">
                 {article.map((post) => {
-                    const { description, userId, like, title, createdAt, tags } = post
-                    console.log(post.id)
+                    const {description, userId, like, title, createdAt, tags } = post
+                    
                     return (
-                        <div className="card" key={post.id}>
+                        <div className="card" key={post._id}>
                             <Card
                                 title={title}
-                                id={post.id}
+                                id={post._id}
                                 description={description}
                                 userId={userId}
                                 like={like}

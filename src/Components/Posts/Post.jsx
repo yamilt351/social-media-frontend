@@ -16,16 +16,16 @@ import { URL } from '../../urlStore'
 import { format } from 'timeago.js'
 /*eslint linebreak-style: ["error", "unix"]*/
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
-function Post({ key, user }) {
+function Post({ id, user }) {
     const [hideComments, setHideComments] = useState(false)
     const [hideRecommended, setHideRecommended] = useState(false)
-    const [Comments, setComments] = useState({})
+    const [comments, setComments] = useState({})
     const [post, setPost] = useState({})
 
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const res = await axios.get(`${URL}find/${key}`)
+                const res = await axios.get(`${URL}find/${id}`)
                 const data = res.data
                 setPost(data)
             } catch (error) {
@@ -33,7 +33,7 @@ function Post({ key, user }) {
             }
         }
         fetchPost()
-    }, [key])
+    }, [id])
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -108,7 +108,7 @@ function Post({ key, user }) {
                     <h1 className="Discuss-coffe">
                         <MdCoffee /> Discuss:{' '}
                     </h1>
-                    <ContentComments />
+                    <ContentComments data={comments}/>
                 </div>
                 <button
                     onClick={() => setHideRecommended(!hideRecommended)}
