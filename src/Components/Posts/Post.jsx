@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Recommended from '../Recommended/Recommended'
 import { FaHeart } from 'react-icons/fa'
 import ContentComments from '../contentComments/ContentComments'
@@ -11,11 +11,42 @@ import {
     MdOutlineBookmark,
     MdCoffee,
 } from 'react-icons/md'
+import axios from 'axios'
+import { URL } from '../../urlStore'
+import { format } from 'timeago.js'
 /*eslint linebreak-style: ["error", "unix"]*/
-function Post() {
+/* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
+function Post({ key, user }) {
     const [hideComments, setHideComments] = useState(false)
     const [hideRecommended, setHideRecommended] = useState(false)
+    const [Comments, setComments] = useState({})
+    const [post, setPost] = useState({})
 
+    useEffect(() => {
+        const fetchPost = async () => {
+            try {
+                const res = await axios.get(`${URL}find/${key}`)
+                const data = res.data
+                setPost(data)
+            } catch (error) {
+                console.log(error.message)
+            }
+        }
+        fetchPost()
+    }, [key])
+
+    useEffect(() => {
+        const fetchComments = async () => {
+            try {
+                const res = await axios.get(`${URL}comments/${post.id}`)
+                const data = res.data
+                setComments(data)
+            } catch (error) {
+                console.error(error.message)
+            }
+        }
+        fetchComments()
+    }, [post.id])
     return (
         <section className="section-Recommended-container">
             <div className="post-section">
@@ -24,54 +55,43 @@ function Post() {
                         <div className="head">
                             <h1>
                                 {' '}
-                                <MdOutlineBookmark /> Title
+                                <MdOutlineBookmark /> {post.title}
                             </h1>{' '}
-                            <p className="createdat-style">created at</p>
+                            <p className="createdat-style">{format(post.createdat)}</p>
                         </div>
                         <div className="sinopsis">
-                            <p className="parragraph-1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                aliquid quibusdam est expedita incidunt delectus veniam magnam
-                saepe voluptas
-                            </p>
+                            <p className="parragraph-1">{post.description}</p>
                         </div>
                     </div>
                     <div className="body-post">
-                        <p className="parragraph-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Dignissimos ipsa, ratione repellendus quidem, obcaecati explicabo
-              non nesciunt excepturi porro optio quos voluptatibus perferendis a
-              fugit incidunt modi iste magnam atque. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Dolorum, sed soluta qui repudiandae
-              quas similique excepturi consequuntur enim et fugiat ad officia
-                        </p>
+                        <p className="parragraph-2">{post.description}</p>
                     </div>
                 </div>
                 <div className="footer-container">
                     <div className="footer__items__center bg-color">
                         <div className="footer__items__center gap">
-                            <Link to={'/Profile'}   className="link-list-user">
+                            <Link to={'/Profile'} className="link-list-user">
                                 <img className="image-author-profile" src="adadasdd"></img>
                             </Link>
                             <Link to={'/Profile'} className="link-list-user">
                                 <h2 className="author-name-display">Autor name</h2>
-                            </Link>    
+                            </Link>
                         </div>
                         <div className="footer__items__center gap">
-                            <FaHeart className="icon-user-info" /> 
-                            <p className="parragraph-3">5000</p>
+                            <FaHeart className="icon-user-info" />
+                            <p className="parragraph-3">{user.subscribers}</p>
                         </div>
                         <div className="footer__items__center gap">
-                            <MdRemoveRedEye className="icon-user-info" /> 
-                            <p className="parragraph-4">3000</p>
+                            <MdRemoveRedEye className="icon-user-info" />
+                            <p className="parragraph-4">{post.views}</p>
                         </div>
                     </div>
                     <div className="footer__items__center">
                         <button className="like footer__items__center gap">
-                            <MdThumbUp /> <span>like</span>
+                            <MdThumbUp /> <span>{post.like.length}</span>
                         </button>
                         <button className="dislike footer__items__center gap">
-                            <MdThumbDown /> <span>dislike</span>
+                            <MdThumbDown /> <span>{post.dislike.length}</span>
                         </button>
                         <button className="Subscribe footer__items__center gap">
                             <FaHeart /> <span>Subscribe</span>

@@ -6,7 +6,7 @@ function Comment() {
     return (
         <div className="comment-render">
             <div className="user-data-container">
-                <Link to={'/Profile'}  className="link-list-user">
+                <Link to={'/Profile'} className="link-list-user">
                     <img src="adasda" className="profile-comment-picture" />
                 </Link>
                 <Link to={'/Profile'} className="link-list-user">

@@ -9,6 +9,7 @@ import Post from './Components/Posts/Post'
 import Searchbar from './Components/SearchBar/Searchbar'
 import Profile from './Components/Profile/Profile'
 /*eslint linebreak-style: ["error", "unix"]*/
+
 class App extends Component {
     render() {
         return (
