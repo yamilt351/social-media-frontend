@@ -1,6 +1,7 @@
 import React from 'react'
 import './Profile.css'
 import Card from '../Card/card'
+/*eslint linebreak-style: ["error", "unix"]*/
 function Profile() {
     return (
         <section className="profile-container-main" id="profile">

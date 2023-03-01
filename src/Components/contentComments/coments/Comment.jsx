@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import { MdCoffee } from 'react-icons/md'
+/*eslint linebreak-style: ["error", "unix"]*/
 const CreateComment = () => {
     return (
         <section className="comment">

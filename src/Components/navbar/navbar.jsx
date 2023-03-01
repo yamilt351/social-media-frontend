@@ -4,7 +4,7 @@ import { loged } from './data'
 import { Link } from 'react-router-dom'
 import './navbar.css'
 import { MdMenu } from 'react-icons/md'
-
+/*eslint linebreak-style: ["error", "unix"]*/
 function Navbar() {
 
     const [show, setShow] = useState(false)

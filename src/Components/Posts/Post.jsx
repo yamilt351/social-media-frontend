@@ -11,6 +11,7 @@ import {
     MdOutlineBookmark,
     MdCoffee,
 } from 'react-icons/md'
+/*eslint linebreak-style: ["error", "unix"]*/
 function Post() {
     const [hideComments, setHideComments] = useState(false)
     const [hideRecommended, setHideRecommended] = useState(false)
