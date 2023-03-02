@@ -12,6 +12,7 @@
 .image-author-profile {
   background-color: var(--clr-primary-1);
 }
+
 .link-list-user{
 		color:var(--clr-primary-1);
 		text-decoration: none;
@@ -159,7 +160,7 @@
     width: 100%;
    }
 
-}
+  }
 
 @media screen and (max-width: 768px) {
   .like,
@@ -176,4 +177,7 @@
   .hider-button {
     height: 2rem;
   }
+	.container{
+			margin:7rem 1rem 0 3.4rem ;
+	}
 }

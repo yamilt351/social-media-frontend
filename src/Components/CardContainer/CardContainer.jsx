@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import './CardContainer.css'
 import Card from '../Card/card'
@@ -46,3 +47,4 @@ function CardContainer({ indicator, type }) {
     )
 }
 export default CardContainer
+

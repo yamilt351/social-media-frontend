@@ -6,6 +6,7 @@ import { format } from 'timeago.js'
 import { URL } from '../../urlStore'
 import './card.css'
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
+
 /*eslint linebreak-style: ["error", "unix"]*/
 function Card({ userId, like, title, createdAt, id }) {
     const [image, setImage] = useState({})
