@@ -1,69 +1,23 @@
-<<<<<<< HEAD
+import axios from "axios";
+import React, { useState } from "react";
+import { URL } from "../../urlStore";
+import "./login.css";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loginStart, loginSuccess, loginFailure } from "../redux/userSlice.js";
 
-import React, { useState } from 'react'
-import './login.css'
 /*eslint linebreak-style: ["error", "unix"]*/
 function Login() {
-    const [register, setRegister] = useState(true)
-
-    function swicht() {
-        if (register) {
-            setRegister(false)
-        } else {
-            setRegister(true)
-        }
-        return register
-    }
-
-    return (
-        <section id="SignIn" className="SignIn">
-            <div className="SignIn-Container">
-                <h1>Welcome!</h1>
-                {register ? (
-                    <div className="form-container signUp">
-                        <form className="form">
-                            <input placeholder="E-mail" type="email"></input>
-                            <input placeholder="Username" type="text"></input>
-                            <input placeholder="Password" type="password" />
-                        </form>
-                        <button type="submit" className="action-button">
-                            {' '}
-              Create User
-                        </button>
-                        <button className="swichter-button" onClick={() => swicht()}>
-                            {register ? 'Sign In' : 'Sign Up!'}
-                        </button>
-                    </div>
-                ) : (
-                    <div className="form-container signIn">
-                        <form className="form">
-                            <input placeholder="username" type="text"></input>
-                            <input type="password" placeholder="password" />
-                        </form>
-                        <button type="submit" className="action-button">
-                            {' '}
-              Login{' '}
-                        </button>
-                        <button className="swichter-button " onClick={() => swicht()}>
-                            {register ? 'Sign In' : 'Sign Up!'}
-                        </button>
-                    </div>
-                )}
-            </div>
-        </section>
-    )
-}
-
-export default Login
-
-=======
-import React, { useState } from "react";
-import "./login.css";
-
-function Login() {
   const [register, setRegister] = useState(true);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const swicht=()=> {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+
+  function swicht() {
     if (register) {
       setRegister(false);
     } else {
@@ -72,40 +26,76 @@ function Login() {
     return register;
   }
 
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    dispatch(loginStart());
+    try {
+      const res = await axios.post(`${URL}auth/signin`, { name, password });
+      dispatch(loginSuccess(res.data));
+				
+      navigate("/");
+    } catch (error) {
+      console.error(error.message);
+      dispatch(loginFailure());
+    }
+  };
+
+
   return (
     <section id="SignIn" className="SignIn">
       <div className="SignIn-Container">
         <h1>Welcome!</h1>
-
         {register ? (
-          <div className="form-container">
+          <div className="form-container signUp">
             <form className="form">
-              <input placeholder="E-mail" type="email"></input>
-              <input placeholder="Username" type="text"></input>
-              <input placeholder="Password" type="password" />
+              <input
+                placeholder="E-mail"
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
+              <input
+                placeholder="Username"
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+              ></input>
+              <input
+                placeholder="Password"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </form>
-            <div className="buttons-container">
-              <div type="submit" className="action-button">
-                {" "}
-                Create User
-              </div>
-              <div className="swichter-button" onClick={() => swicht()}>
-                {register ? "Sign In" : "Sign Up!"}
-              </div>
-            </div>
+            <button type="submit" className="action-button">
+              {" "}
+              Create User
+            </button>
+            <button className="swichter-button" onClick={() => swicht()}>
+              {register ? "Sign In" : "Sign Up!"}
+            </button>
           </div>
         ) : (
-          <div className="form-container">
+          <div className="form-container signIn">
             <form className="form">
-              <input placeholder="username" type="text"></input>
-              <input type="password" placeholder="password" />
+              <input
+                placeholder="username"
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+              ></input>
+              <input
+                type="password"
+                placeholder="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </form>
-
-            <button type="submit" className="action-button">
+            <button
+              type="submit"
+              className="action-button"
+              onClick={handleLogin}
+            >
               {" "}
               Login{" "}
             </button>
-            <button className="swichter-button<F2>" onClick={() => swicht()}>
+            <button className="swichter-button " onClick={() => swicht()}>
               {register ? "Sign In" : "Sign Up!"}
             </button>
           </div>
@@ -115,5 +105,4 @@ function Login() {
   );
 }
 
-export default Login();
->>>>>>> edab40c (checkpoint)
+export default Login;
