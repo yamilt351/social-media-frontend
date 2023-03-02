@@ -36,6 +36,3 @@ function Comment({ description, userId, like, dislike, createdat }) {
     )
 }
 export default Comment
-
-
-

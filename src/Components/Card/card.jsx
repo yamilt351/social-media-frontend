@@ -12,25 +12,25 @@ function Card({ userId, like, title, createdAt, id }) {
     const [user, setUser] = useState({})
 
     useEffect(() => {
-        const fetchUser = async () => {
-            const res = await axios.get(`${URL}users/find/${userId}`)
-            const data = res.data
-            setUser(data)
-        }
-        fetchUser()
-    }, [userId])
+        try {
+            const fetchData = async () => {
+                const responseUserData = await axios.get(`${URL}users/find/${userId}`)
+                const dataUser = responseUserData.data
+                setUser(dataUser)
 
-    useEffect(() => {
-        const fetchImage = async () => {
-            const res = await axios.get(`${URL}profilepic/${user.imageId}`)
-            const data = res.data
-            setImage(data)
+                const resImgData = await axios.get(`${URL}profilepic/${user.imageId}`)
+                const dataImg = resImgData.data
+                setImage(dataImg)
+            }
+            fetchData()
+        } catch (error) {
+            console.error(error.message)
         }
-        fetchImage()
-    }, [user.imageId])
+    }, [user.imageId, userId])
+
 
     return (
-        <Link className="link-list" to={`/Post/${id}`} key={id}>
+        <Link className="link-list" to={`/Post/${id}/${userId}`}>
             <div className="card-container">
                 <div className="titles">
                     <h2 className="Story">{title}</h2>

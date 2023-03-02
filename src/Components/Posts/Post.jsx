@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Recommended from '../Recommended/Recommended'
 import { FaHeart } from 'react-icons/fa'
 import ContentComments from '../contentComments/ContentComments'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './Post.css'
 import {
     MdRemoveRedEye,
@@ -16,37 +16,33 @@ import { URL } from '../../urlStore'
 import { format } from 'timeago.js'
 /*eslint linebreak-style: ["error", "unix"]*/
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
-function Post({ id, user }) {
+
+function Post() {
     const [hideComments, setHideComments] = useState(false)
     const [hideRecommended, setHideRecommended] = useState(false)
-    const [comments, setComments] = useState({})
     const [post, setPost] = useState({})
-
+    const [user, setUser] = useState({})
+    const [image, setImage] = useState({})
+    const postPath = useLocation().pathname.split('/')[2]
+    const userPath= useLocation().pathname.split('/')[3]
     useEffect(() => {
-        const fetchPost = async () => {
+        const fetchData = async () => {
             try {
-                const res = await axios.get(`${URL}find/${id}`)
-                const data = res.data
-                setPost(data)
+                const res = await axios.get(`${URL}posts/find/${postPath}`)
+                setPost(res.data)
+                const userRes = await axios.get(`${URL}users/find/${userPath}`)
+                setUser(userRes.data)
+                const imgRes = await axios.get(
+                    `${URL}/users/profilePic/${userPath}`
+                )
+                setImage(imgRes.data)
             } catch (error) {
                 console.log(error.message)
             }
         }
-        fetchPost()
-    }, [id])
+        fetchData()
+    }, [postPath,userPath])
 
-    useEffect(() => {
-        const fetchComments = async () => {
-            try {
-                const res = await axios.get(`${URL}comments/${post.id}`)
-                const data = res.data
-                setComments(data)
-            } catch (error) {
-                console.error(error.message)
-            }
-        }
-        fetchComments()
-    }, [post.id])
     return (
         <section className="section-Recommended-container">
             <div className="post-section">
@@ -57,7 +53,7 @@ function Post({ id, user }) {
                                 {' '}
                                 <MdOutlineBookmark /> {post.title}
                             </h1>{' '}
-                            <p className="createdat-style">{format(post.createdat)}</p>
+                            <p className="createdat-style">{format(post.createdAt)}</p>
                         </div>
                         <div className="sinopsis">
                             <p className="parragraph-1">{post.description}</p>
@@ -70,11 +66,11 @@ function Post({ id, user }) {
                 <div className="footer-container">
                     <div className="footer__items__center bg-color">
                         <div className="footer__items__center gap">
-                            <Link to={'/Profile'} className="link-list-user">
-                                <img className="image-author-profile" src="adadasdd"></img>
+                            <Link to={`/Profile/${post.userId}`} className="link-list-user">
+                                <img className="image-author-profile" src={image.path}></img>
                             </Link>
-                            <Link to={'/Profile'} className="link-list-user">
-                                <h2 className="author-name-display">Autor name</h2>
+                            <Link to={`/Profile/${post.userId}`} className="link-list-user">
+                                <h2 className="author-name-display">{user.username}</h2>
                             </Link>
                         </div>
                         <div className="footer__items__center gap">
@@ -88,10 +84,10 @@ function Post({ id, user }) {
                     </div>
                     <div className="footer__items__center">
                         <button className="like footer__items__center gap">
-                            <MdThumbUp /> <span>{post.like.length}</span>
+                            <MdThumbUp /> <span> like</span>
                         </button>
                         <button className="dislike footer__items__center gap">
-                            <MdThumbDown /> <span>{post.dislike.length}</span>
+                            <MdThumbDown /> <span> dislike</span>
                         </button>
                         <button className="Subscribe footer__items__center gap">
                             <FaHeart /> <span>Subscribe</span>
@@ -108,7 +104,8 @@ function Post({ id, user }) {
                     <h1 className="Discuss-coffe">
                         <MdCoffee /> Discuss:{' '}
                     </h1>
-                    <ContentComments data={comments}/>
+
+                    <ContentComments postId={postPath} />
                 </div>
                 <button
                     onClick={() => setHideRecommended(!hideRecommended)}
@@ -118,7 +115,7 @@ function Post({ id, user }) {
                 </button>
             </div>
             <div className="Recommended-section-node">
-                <Recommended prop={hideRecommended} />
+                <Recommended prop={hideRecommended} tags={post.tags} />
             </div>
         </section>
     )

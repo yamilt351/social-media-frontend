@@ -35,9 +35,11 @@ class App extends Component {
                         path="/Trending"
                         element={<CardContainer type="trend" indicator="Popular" />}
                     />
-                    <Route path="/Post" element={<CreatePost type="posts" />} />
+                    <Route path="/CreatePost" element={<CreatePost type="posts" />} />
                     <Route path="/Profile" element={<Profile type="profile" />} />
-                    <Route path="/Post/id" element={<Post />} />
+                    <Route path='/Post'>
+                        <Route path=":id/:userId" element={<Post />} />
+                    </Route>
                 </Routes>
             </Router>
         )
