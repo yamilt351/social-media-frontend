@@ -1,6 +1,6 @@
 import React from "react";
 import {
-<<<<<<< HEAD
+
     MdInsertPhoto,
     MdChatBubble,
     MdSearch,
@@ -10,15 +10,7 @@ import {
 
 /*eslint linebreak-style: ["error", "unix"]*/
 import './CreatePost.css'
-=======
-  MdInsertPhoto,
-  MdChatBubble,
-  MdSearch,
-  MdTipsAndUpdates,
-  MdEditNote,
-} from "react-icons/md";
-import "./CreatePost.css";
->>>>>>> edab40c (checkpoint)
+
 
 function CreatePost() {
   return (
