@@ -13,21 +13,30 @@ function Card({ userId, like, title, createdAt, id }) {
 
     useEffect(() => {
         try {
-            const fetchData = async () => {
+            const fetchDataUser = async () => {
                 const responseUserData = await axios.get(`${URL}users/find/${userId}`)
                 const dataUser = responseUserData.data
                 setUser(dataUser)
-
-                const resImgData = await axios.get(`${URL}profilepic/${user.imageId}`)
-                const dataImg = resImgData.data
-                setImage(dataImg)
             }
-            fetchData()
+            fetchDataUser()
         } catch (error) {
             console.error(error.message)
         }
-    }, [user.imageId, userId])
+    }, [userId])
 
+    useEffect(() => {
+        try {
+            const fetchDataImage = async () => {
+                const resImgData = await axios.get(`${URL}profilepic/${user.imageId}`)
+                const dataImg = resImgData.data
+                setImage(dataImg)
+                
+            }
+            fetchDataImage()
+        } catch (error) {
+            console.error(error.message)
+        }
+    }, [user.imageId])
 
     return (
         <Link className="link-list" to={`/Post/${id}/${userId}`}>

@@ -1,20 +1,13 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+
+import React from 'react'
 import { MdOutlineMenuBook } from 'react-icons/md'
 import Card from '../Card/card.jsx'
 import './Recommended.css'
 /*eslint linebreak-style: ["error", "unix"]*/
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
-function Recommended({ prop, tags }) {
-    const [recommend, setRecommend] = useState([])
+function Recommended({ prop, recommend }) {
+   
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const resRecommended = await axios.get(`${URL}posts/tags?tags=${tags}`)
-            setRecommend(resRecommended.data)
-        }
-        fetchData()
-    }, [tags])
 
     return (
         <section className="Recommended-section" id="Recommended">
@@ -25,7 +18,7 @@ function Recommended({ prop, tags }) {
             </div>
             <div className={!prop ? 'cards-Recommended-container' : 'off'}>
                 {recommend.map((recomendation) => {
-                    const { title, like, userId} = recomendation
+                    const { title, like, userId } = recomendation
                     return (
                         <Card
                             title={title}

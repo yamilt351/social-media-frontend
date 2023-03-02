@@ -22,9 +22,11 @@ function Post() {
     const [hideRecommended, setHideRecommended] = useState(false)
     const [post, setPost] = useState({})
     const [user, setUser] = useState({})
-    const [image, setImage] = useState({})
+    const [recommend, setRecommend] = useState([])
+
     const postPath = useLocation().pathname.split('/')[2]
-    const userPath= useLocation().pathname.split('/')[3]
+    const userPath = useLocation().pathname.split('/')[3]
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -32,16 +34,24 @@ function Post() {
                 setPost(res.data)
                 const userRes = await axios.get(`${URL}users/find/${userPath}`)
                 setUser(userRes.data)
-                const imgRes = await axios.get(
-                    `${URL}/users/profilePic/${userPath}`
-                )
-                setImage(imgRes.data)
             } catch (error) {
                 console.log(error.message)
             }
         }
         fetchData()
-    }, [postPath,userPath])
+    }, [postPath, userPath])
+
+    useEffect(() => {
+        const fetchRecommended = async () => {
+            try {
+                const resRecommended = await axios.get(`${URL}posts/tags?tags=${post.tags}`)
+                setRecommend(resRecommended.data)
+            } catch (error) {
+                console.error(error.message)
+            }
+        }
+        fetchRecommended()
+    }, [post.tags])
 
     return (
         <section className="section-Recommended-container">
@@ -67,7 +77,7 @@ function Post() {
                     <div className="footer__items__center bg-color">
                         <div className="footer__items__center gap">
                             <Link to={`/Profile/${post.userId}`} className="link-list-user">
-                                <img className="image-author-profile" src={image.path}></img>
+                                <img className="image-author-profile" src="adsad"></img>
                             </Link>
                             <Link to={`/Profile/${post.userId}`} className="link-list-user">
                                 <h2 className="author-name-display">{user.username}</h2>
@@ -79,7 +89,7 @@ function Post() {
                         </div>
                         <div className="footer__items__center gap">
                             <MdRemoveRedEye className="icon-user-info" />
-                            <p className="parragraph-4">{post.views}</p>
+                            <p className="parragraph-4">3000</p>
                         </div>
                     </div>
                     <div className="footer__items__center">
@@ -115,7 +125,7 @@ function Post() {
                 </button>
             </div>
             <div className="Recommended-section-node">
-                <Recommended prop={hideRecommended} tags={post.tags} />
+                <Recommended prop={hideRecommended} recommend={recommend} />
             </div>
         </section>
     )
