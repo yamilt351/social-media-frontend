@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react'
 import './login.css'
-
+/*eslint linebreak-style: ["error", "unix"]*/
 function Login() {
     const [register, setRegister] = useState(true)
 
@@ -17,31 +18,27 @@ function Login() {
         <section id="SignIn" className="SignIn">
             <div className="SignIn-Container">
                 <h1>Welcome!</h1>
-
                 {register ? (
-                    <div className="form-container">
+                    <div className="form-container signUp">
                         <form className="form">
                             <input placeholder="E-mail" type="email"></input>
                             <input placeholder="Username" type="text"></input>
                             <input placeholder="Password" type="password" />
                         </form>
-                        <div className="buttons-container">
-                            <div type="submit" className="action-button">
-                                {' '}
-                Create User
-                            </div>
-                            <div className="swichter-button" onClick={() => swicht()}>
-                                {register ? 'Sign In' : 'Sign Up!'}
-                            </div>
-                        </div>
+                        <button type="submit" className="action-button">
+                            {' '}
+              Create User
+                        </button>
+                        <button className="swichter-button" onClick={() => swicht()}>
+                            {register ? 'Sign In' : 'Sign Up!'}
+                        </button>
                     </div>
                 ) : (
-                    <div className="form-container">
+                    <div className="form-container signIn">
                         <form className="form">
                             <input placeholder="username" type="text"></input>
                             <input type="password" placeholder="password" />
                         </form>
-
                         <button type="submit" className="action-button">
                             {' '}
               Login{' '}
@@ -57,3 +54,4 @@ function Login() {
 }
 
 export default Login
+

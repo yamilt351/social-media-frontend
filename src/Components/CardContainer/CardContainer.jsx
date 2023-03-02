@@ -1,46 +1,50 @@
+
 import React, { useEffect, useState } from 'react'
 import './CardContainer.css'
 import Card from '../Card/card'
 import axios from 'axios'
-import { http } from '../ApiCall/FetchFunctions'
-
+import { URL } from '../../urlStore'
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
+/*eslint linebreak-style: ["error", "unix"]*/
 
 function CardContainer({ indicator, type }) {
     const [article, setArticle] = useState([])
-
+    
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const res = await axios.get(`${http}posts/${type}`)
-                const data = res.data
-                setArticle(data)
-            } catch (error) {
-                console.log(error.message)
-            }
+        const fetchArticle = async () => {
+            const res = await axios.get(`${URL}posts/${type}`)
+            const data = res.data
+            setArticle(data)
         }
-        fetchArticles()
+        fetchArticle()
     }, [type])
 
     return (
         <>
-            <h1 className="page-indicator">{indicator}</h1>
-            {article.map((value) => {
-                const { id, userId, createdAt, description, title, like } = value
-                return (
-                    <div className="section-card-container" key={id}>
-                        <Card
-                            type={type}
-                            userId={userId}
-                            createdAt={createdAt}
-                            description={description}
-                            title={title}
-                            like={like}
-                        />
-                    </div>
-                )
-            })}
+            <h1 className="Page-indicator">{indicator}</h1>
+            <div className="section-card-container">
+                {article.map((post) => {
+                    const { description, userId, like, title, createdAt, tags } =
+            post
+                    return (
+                        <div className="card" key={post._id}>
+
+                            <Card
+                                title={title}
+                                id={post._id}
+                                description={description}
+                                userId={userId}
+                                like={like}
+                                createdAt={createdAt}
+                                tags={tags}
+                            />
+                        </div>
+
+                    )
+                })}
+            </div>
         </>
     )
 }
 export default CardContainer
+

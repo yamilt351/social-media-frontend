@@ -1,6 +1,7 @@
 import React from 'react'
 import './Profile.css'
 import Card from '../Card/card'
+/*eslint linebreak-style: ["error", "unix"]*/
 function Profile() {
     return (
         <section className="profile-container-main" id="profile">
@@ -39,28 +40,6 @@ function Profile() {
                 <h1 className="following-users-title">FOLLOWING:</h1>
                 <div className="following-users-container">
                     <div className="user-followed-container">
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
                         <Card />
                     </div>
                 </div>

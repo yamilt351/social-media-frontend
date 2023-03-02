@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdSearch } from 'react-icons/md'
 import './Searchbar.css'
-
+/*eslint linebreak-style: ["error", "unix"]*/
 function Searchbar() {
 
     return (
