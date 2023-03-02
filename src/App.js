@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { Component } from 'react'
 import './App.css'
 import Navbar from './Components/navbar/navbar'
