@@ -29,7 +29,11 @@ function Login() {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post(`${URL}auth/signin`, { name, password });
+      const res = await axios.post(
+        `${URL}auth/signin`,
+        { name, password },
+        { withCredentials: true, credentials: "include" }
+      );
       dispatch(loginSuccess(res.data));
 
       navigate("/");
@@ -47,7 +51,7 @@ function Login() {
       console.error(error.message);
     }
   };
-		console.log(name,password,email);
+  console.log(name, password, email);
   return (
     <section id="SignIn" className="SignIn">
       <div className="SignIn-Container">
