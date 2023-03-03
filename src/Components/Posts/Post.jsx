@@ -1,133 +1,160 @@
-import React, { useEffect, useState } from 'react'
-import Recommended from '../Recommended/Recommended'
-import { FaHeart } from 'react-icons/fa'
-import ContentComments from '../contentComments/ContentComments'
-import { Link, useLocation } from 'react-router-dom'
-import './Post.css'
+import React, { useEffect, useState } from "react";
+import Recommended from "../Recommended/Recommended";
+import { FaHeart, FaHeartBroken } from "react-icons/fa";
+import ContentComments from "../contentComments/ContentComments";
+import { Link, useLocation } from "react-router-dom";
+import "./Post.css";
 import {
-    MdRemoveRedEye,
-    MdThumbDown,
-    MdThumbUp,
-    MdOutlineBookmark,
-    MdCoffee,
-} from 'react-icons/md'
-import axios from 'axios'
-import { URL } from '../../urlStore'
-import { format } from 'timeago.js'
+  MdRemoveRedEye,
+  MdThumbDown,
+  MdThumbUp,
+  MdOutlineBookmark,
+  MdCoffee,
+  MdThumbUpOffAlt,
+  MdThumbDownOffAlt,
+} from "react-icons/md";
+import axios from "axios";
+import { URL } from "../../urlStore";
+import { format } from "timeago.js";
+import { useSelector } from "react-redux";
+
 /*eslint linebreak-style: ["error", "unix"]*/
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 
 function Post() {
-    const [hideComments, setHideComments] = useState(false)
-    const [hideRecommended, setHideRecommended] = useState(false)
-    const [post, setPost] = useState({})
-    const [user, setUser] = useState({})
-    const [recommend, setRecommend] = useState([])
+  const [hideComments, setHideComments] = useState(false);
+  const [hideRecommended, setHideRecommended] = useState(false);
+  const [post, setPost] = useState({});
+  const [user, setUser] = useState({});
+  const [recommend, setRecommend] = useState([]);
 
-    const postPath = useLocation().pathname.split('/')[2]
-    const userPath = useLocation().pathname.split('/')[3]
+  const { currentUser } = useSelector((state) => state.user);
+  const postPath = useLocation().pathname.split("/")[2];
+  const userPath = useLocation().pathname.split("/")[3];
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(`${URL}posts/find/${postPath}`)
-                setPost(res.data)
-                const userRes = await axios.get(`${URL}users/find/${userPath}`)
-                setUser(userRes.data)
-            } catch (error) {
-                console.log(error.message)
-            }
-        }
-        fetchData()
-    }, [postPath, userPath])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`${URL}posts/find/${postPath}`);
+        setPost(res.data);
 
-    useEffect(() => {
-        const fetchRecommended = async () => {
-            try {
-                const resRecommended = await axios.get(`${URL}posts/tags?tags=${post.tags}`)
-                setRecommend(resRecommended.data)
-            } catch (error) {
-                console.error(error.message)
-            }
-        }
-        fetchRecommended()
-    }, [post.tags])
+        const userRes = await axios.get(`${URL}users/find/${userPath}`);
+        setUser(userRes.data);
+        const resRecommended = await axios.get(
+          `${URL}posts/tags?tags=${post.tags}`
+        );
+        setRecommend(resRecommended.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, [postPath, userPath, post.tags]);
 
-    return (
-        <section className="section-Recommended-container">
-            <div className="post-section">
-                <div className="story-author-container">
-                    <div className="head-and-description-container">
-                        <div className="head">
-                            <h1>
-                                {' '}
-                                <MdOutlineBookmark /> {post.title}
-                            </h1>{' '}
-                            <p className="createdat-style">{format(post.createdAt)}</p>
-                        </div>
-                        <div className="sinopsis">
-                            <p className="parragraph-1">{post.description}</p>
-                        </div>
-                    </div>
-                    <div className="body-post">
-                        <p className="parragraph-2">{post.description}</p>
-                    </div>
-                </div>
-                <div className="footer-container">
-                    <div className="footer__items__center bg-color">
-                        <div className="footer__items__center gap">
-                            <Link to={`/Profile/${post.userId}`} className="link-list-user">
-                                <img className="image-author-profile" src="adsad"></img>
-                            </Link>
-                            <Link to={`/Profile/${post.userId}`} className="link-list-user">
-                                <h2 className="author-name-display">{user.username}</h2>
-                            </Link>
-                        </div>
-                        <div className="footer__items__center gap">
-                            <FaHeart className="icon-user-info" />
-                            <p className="parragraph-3">{user.subscribers}</p>
-                        </div>
-                        <div className="footer__items__center gap">
-                            <MdRemoveRedEye className="icon-user-info" />
-                            <p className="parragraph-4">3000</p>
-                        </div>
-                    </div>
-                    <div className="footer__items__center">
-                        <button className="like footer__items__center gap">
-                            <MdThumbUp /> <span> like</span>
-                        </button>
-                        <button className="dislike footer__items__center gap">
-                            <MdThumbDown /> <span> dislike</span>
-                        </button>
-                        <button className="Subscribe footer__items__center gap">
-                            <FaHeart /> <span>Subscribe</span>
-                        </button>
-                    </div>
-                    <button
-                        onClick={() => setHideComments(!hideComments)}
-                        className="hider-button"
-                    >
-                        {!hideComments ? 'Hide Comments' : 'Show Comments'}
-                    </button>
-                </div>
-                <div className={!hideComments ? 'comentary-section' : 'off'}>
-                    <h1 className="Discuss-coffe">
-                        <MdCoffee /> Discuss:{' '}
-                    </h1>
+  useEffect(() => {
+    const sendData = async () => {
+      try {
+        await axios.put(`${URL}posts/view/${postPath}`);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+			sendData();
+  });
 
-                    <ContentComments postId={postPath} />
-                </div>
-                <button
-                    onClick={() => setHideRecommended(!hideRecommended)}
-                    className="hider-button"
-                >
-                    {!hideRecommended ? 'Hide Recomendations' : 'Show Recomendations'}
-                </button>
+  return (
+    <section className="section-Recommended-container">
+      <div className="post-section">
+        <div className="story-author-container">
+          <div className="head-and-description-container">
+            <div className="head">
+              <h1>
+                {" "}
+                <MdOutlineBookmark /> {post.title}
+              </h1>{" "}
+              <p className="createdat-style">{format(post.createdAt)}</p>
             </div>
-            <div className="Recommended-section-node">
-                <Recommended prop={hideRecommended} recommend={recommend} />
+          </div>
+          <div className="body-post">
+            <p className="parragraph-2">{post.description}</p>
+          </div>
+        </div>
+        <div className="footer-container">
+          <div className="footer__items__center bg-color">
+            <div className="footer__items__center gap">
+              <Link to={`/Profile/${post.userId}`} className="link-list-user">
+                <img className="image-author-profile" src="adsad"></img>
+              </Link>
+              <Link to={`/Profile/${post.userId}`} className="link-list-user">
+                <h2 className="author-name-display">{user.username}</h2>
+              </Link>
             </div>
-        </section>
-    )
+            <div className="footer__items__center gap">
+              <FaHeart className="icon-user-info" />
+              <p className="parragraph-3">{user.subscribers}</p>
+            </div>
+            <div className="footer__items__center gap">
+              <MdRemoveRedEye className="icon-user-info" />
+              <p className="parragraph-4">{post.views}</p>
+            </div>
+          </div>
+          <div className="footer__items__center">
+            <button className="like footer__items__center gap">
+              {post.likes?.includes(currentUser._id) ? (
+                <MdThumbUp />
+              ) : (
+                <MdThumbUpOffAlt />
+              )}
+              <span> like</span>
+            </button>
+            <button className="dislike footer__items__center gap">
+              {post.dislikes?.includes(currentUser._id) ? (
+                <MdThumbDown />
+              ) : (
+                <MdThumbDownOffAlt />
+              )}
+              <span> dislike</span>
+            </button>
+            <button className="Subscribe footer__items__center gap">
+              {/*deberia cambiar de color el boton de subscribirse idealmente*/}
+
+              {user.subscriberdUser?.includes(currentUser._id) ? (
+                <FaHeartBroken />
+              ) : (
+                <FaHeart />
+              )}
+              {user.subscriberdUser?.includes(currentUser._id) ? (
+                <span>Unubscribe</span>
+              ) : (
+                <span>Subscribe</span>
+              )}
+            </button>
+          </div>
+          <button
+            onClick={() => setHideComments(!hideComments)}
+            className="hider-button"
+          >
+            {!hideComments ? "Hide Comments" : "Show Comments"}
+          </button>
+        </div>
+        <div className={!hideComments ? "comentary-section" : "off"}>
+          <h1 className="Discuss-coffe">
+            <MdCoffee /> Discuss:{" "}
+          </h1>
+
+          <ContentComments postId={postPath} />
+        </div>
+        <button
+          onClick={() => setHideRecommended(!hideRecommended)}
+          className="hider-button"
+        >
+          {!hideRecommended ? "Hide Recomendations" : "Show Recomendations"}
+        </button>
+      </div>
+      <div className="Recommended-section-node">
+        <Recommended prop={hideRecommended} recommend={recommend} />
+      </div>
+    </section>
+  );
 }
-export default Post
+export default Post;

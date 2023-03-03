@@ -5,7 +5,7 @@ import {
   FaHome,
   FaHeart,
   FaSignInAlt,
-  FaUserAlt,
+  // FaUserAlt,
   FaFeather,
 } from "react-icons/fa";
 
@@ -20,7 +20,7 @@ export const loged = [
   { id: 1, name: "Trending Post", icon: <FaFire />, url: "/Trending" },
 
   { id: 2, name: "Subscriptions", icon: <FaHeart />, url: "/Subscriptions" },
-  { id: 3, name: "Profile", icon: <FaUserAlt />, url: "/Profile" },
+  // { id: 3, name: "Profile", icon: <FaUserAlt />, url: "/Profile" },
   { id: 4, name: "Create Post", icon: <FaFeather />, url: "/CreatePost" },
   { id: 5, name: "Log Out", icon: <FaArrowCircleLeft />, url: "/LogOut" },
 ];

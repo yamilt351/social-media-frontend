@@ -6,11 +6,9 @@ import "./navbar.css";
 import { MdMenu } from "react-icons/md";
 import { useSelector } from "react-redux";
 
-
-
 /*eslint linebreak-style: ["error", "unix"]*/
 function Navbar() {
-		const { currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
 
   const showNabvar = () => {
@@ -23,6 +21,7 @@ function Navbar() {
         <MdMenu />
       </button>
       <div className="UserProfile">
+					{/* 
         <div className={show ? "UserPhoto" : "hide-text"}>
           <Link to={"/Profile"}>
             <img
@@ -31,40 +30,45 @@ function Navbar() {
             />
           </Link>
         </div>
+				*/}
+
         <h1 className={show ? "Username" : "hide-text"}>
           <Link className="Username" to={"/Profile"}>
-            Username
+            {currentUser.username}
           </Link>
         </h1>
       </div>
       <div className={show ? "responsive-navbar" : "responsive-simple-bar"}>
         <div className="UnLoged">
-			{!currentUser ? <ul className="List">
-            {data.map((links) => {
-              const { id, name, icon, url } = links;
-              return (
-                <li className="LinkContainer" key={id}>
-                  <Link to={url} className="link-list">
-                    <div className={show ? "normal" : "big"}>{icon}</div>{" "}
-                    <p className={show ? "show-text" : "hide-text"}>{name}</p>{" "}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul> : 
-          <ul className='List'>
-            {loged.map((log) => {
-              const { id, name, icon, url } = log;
-              return (
-                <li className="LinkContainer" key={id}>
-                  <Link to={url} className="link-list">
-                    <div className={show ? "normal" : "big"}>{icon}</div>{" "}
-                    <p className={show ? "show-text" : "hide-text"}>{name}</p>{" "}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>}
+          {!currentUser ? (
+            <ul className="List">
+              {data.map((links) => {
+                const { id, name, icon, url } = links;
+                return (
+                  <li className="LinkContainer" key={id}>
+                    <Link to={url} className="link-list">
+                      <div className={show ? "normal" : "big"}>{icon}</div>{" "}
+                      <p className={show ? "show-text" : "hide-text"}>{name}</p>{" "}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <ul className="List">
+              {loged.map((log) => {
+                const { id, name, icon, url } = log;
+                return (
+                  <li className="LinkContainer" key={id}>
+                    <Link to={url} className="link-list">
+                      <div className={show ? "normal" : "big"}>{icon}</div>{" "}
+                      <p className={show ? "show-text" : "hide-text"}>{name}</p>{" "}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
       </div>
     </nav>

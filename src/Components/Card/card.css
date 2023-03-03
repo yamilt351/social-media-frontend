@@ -1,5 +1,6 @@
 .card {
-  width: 8rem;
+  width: 20rem;
+	height: 20rem;
   margin: 0.5rem;
   display: block;
 	background-color: var(--clr-primary-4);
@@ -9,7 +10,12 @@
   box-shadow: 5px 5px 0px 0px var(--clr-primary-1),
     10px 10px 0px 0px var(--clr-grey-1), 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-
+.text-description{
+		display: flex;
+		flex-wrap: wrap;
+     width: 100%;
+		 color: var(--clr-primary-1);
+}
 .autor,
 .Story,
 .CreatedAt {
@@ -19,14 +25,14 @@
   justify-content: center;
 }
 
-.thumbnail {
-  height: 12rem;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-}
+/* .thumbnail { */
+/*   height: 12rem; */
+/*   width: auto; */
+/*   display: flex; */
+/*   align-items: center; */
+/*   justify-content: center; */
+/*   margin: auto; */
+/* } */
 .CreatedAt {
   margin: 0.2rem;
 }
