@@ -15,8 +15,6 @@ const ContentComments = ({ postId }) => {
         const fetchData = async () => {
             const resComments = await axios.get(`${URL}comments/${postId}`)
             setLoadComments(resComments.data)
-            console.log(postId)
-            console.log(loadComments)
         }
         fetchData()
     }, [postId])

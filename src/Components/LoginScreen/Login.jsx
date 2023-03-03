@@ -16,7 +16,6 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
   function swicht() {
     if (register) {
       setRegister(false);
@@ -26,14 +25,13 @@ function Login() {
     return register;
   }
 
-
   const handleLogin = async (e) => {
     e.preventDefault();
     dispatch(loginStart());
     try {
       const res = await axios.post(`${URL}auth/signin`, { name, password });
       dispatch(loginSuccess(res.data));
-				
+
       navigate("/");
     } catch (error) {
       console.error(error.message);
@@ -41,7 +39,15 @@ function Login() {
     }
   };
 
-
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${URL}auth/signUp`, { name, password, email });
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+		console.log(name,password,email);
   return (
     <section id="SignIn" className="SignIn">
       <div className="SignIn-Container">
@@ -65,7 +71,11 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </form>
-            <button type="submit" className="action-button">
+            <button
+              type="submit"
+              className="action-button"
+              onClick={handleRegister}
+            >
               {" "}
               Create User
             </button>
