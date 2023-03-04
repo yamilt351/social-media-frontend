@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { useEffect, useState } from "react";
 import "./CardContainer.css";
 import Card from "../Card/card";

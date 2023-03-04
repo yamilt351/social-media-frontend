@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from "react";
 import { MdOutlineMenuBook } from "react-icons/md";
 import Card from "../Card/card.jsx";
@@ -5,7 +6,7 @@ import "./Recommended.css";
 /*eslint linebreak-style: ["error", "unix"]*/
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 function Recommended({ prop, recommend }) {
-  return (
+   return (
     <section className="Recommended-section" id="Recommended">
       <div className="text-Recommended-container">
         <h1 className="Recomendations">
@@ -22,7 +23,7 @@ function Recommended({ prop, recommend }) {
               like={like}
               userId={userId}
               key={recomendation._id}
-							id={recomendation._id}
+              id={recomendation._id}
             />
           );
         })}

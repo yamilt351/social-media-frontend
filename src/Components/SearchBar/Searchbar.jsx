@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react'
 import { MdSearch } from 'react-icons/md'
 import './Searchbar.css'

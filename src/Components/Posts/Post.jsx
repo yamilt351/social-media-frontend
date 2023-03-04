@@ -16,7 +16,7 @@ import {
 } from "react-icons/md";
 import axios from "axios";
 import { URL } from "../../urlStore";
-import { format } from "timeago.js";
+// import { format } from "timeago.js";
 import { useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 
@@ -36,34 +36,50 @@ function Post() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const res = await axios.get(`${URL}posts/find/${postPath}`);
-        setPost(res.data);
-
-        const userRes = await axios.get(`${URL}users/find/${userPath}`);
-        setUser(userRes.data);
-        const resRecommended = await axios.get(
-          `${URL}posts/tags?tags=${post.tags}`
-        );
-        setRecommend(resRecommended.data);
-      } catch (error) {
-        console.log(error.message);
+      if (postPath) {
+        try {
+          await axios.put(`${URL}posts/view/${postPath}`);
+          console.log(3);
+        } catch (error) {
+          console.error(error.message);
+        }
+        try {
+          const res = await axios.get(`${URL}posts/find/${postPath}`);
+          setPost(res.data);
+          console.log(2);
+        } catch (error) {
+          console.error(error.message);
+        }
+        try {
+          const userRes = await axios.get(`${URL}users/find/${userPath}`);
+          console.log(1);
+          setUser(userRes.data);
+        } catch (error) {
+          console.log(error.message);
+        }
       }
     };
     fetchData();
-  }, [postPath, userPath, post.tags]);
+  }, []);
 
   useEffect(() => {
-    const sendData = async () => {
-      try {
-        await axios.put(`${URL}posts/view/${postPath}`);
-      } catch (error) {
-        console.error(error.message);
-      }
+    const fetchRecommended = async () => {
+      if (post) {
+        try {
+          const resRecommended = await axios.get(
+            `${URL}posts/tags?tags=${post.tags}`
+          );
+          setRecommend(resRecommended.data);
+						console.log(4);
+        } catch (error) {
+          console.error(error.message);
+        }
+      }else{
+					console.log("aun no carga post");
+			}
     };
-    sendData();
-  });
-
+			fetchRecommended()
+  },[post]);
   const handleChangePost = async (e) => {
     e.preventDefault();
   };
@@ -71,7 +87,6 @@ function Post() {
   const handleDeletePost = async (e) => {
     e.preventDefault();
   };
-
   return (
     <section className="section-Recommended-container">
       {!recommend || !post || !user ? (
@@ -86,11 +101,11 @@ function Post() {
                     {" "}
                     <MdOutlineBookmark /> {post.title}
                   </h1>{" "}
-                  <p className="createdat-style">{format(post.createdAt)}</p>
+                  <p className="createdat-style">{post.createdAt}</p>
                 </div>
                 {/* si es tuyo el comentario te deja DEl & EDIT*/}
 
-                {currentUser._id === userPath ? (
+                {currentUser?._id === userPath ? (
                   <div className="buttons-user-actio">
                     <button className="interaction" onClick={handleChangePost}>
                       <FaFeatherAlt /> Edit
@@ -136,7 +151,7 @@ function Post() {
               </div>
               <div className="footer__items__center">
                 <button className="like footer__items__center gap">
-                  {post.likes?.includes(currentUser._id) ? (
+                  {post.likes?.includes(currentUser?._id) ? (
                     <MdThumbUp />
                   ) : (
                     <MdThumbUpOffAlt />
@@ -144,7 +159,7 @@ function Post() {
                   <span> like</span>
                 </button>
                 <button className="dislike footer__items__center gap">
-                  {post.dislikes?.includes(currentUser._id) ? (
+                  {post.dislikes?.includes(currentUser?._id) ? (
                     <MdThumbDown />
                   ) : (
                     <MdThumbDownOffAlt />
@@ -154,12 +169,12 @@ function Post() {
                 <button className="Subscribe footer__items__center gap">
                   {/*deberia cambiar de color el boton de subscribirse idealmente*/}
 
-                  {user.subscriberdUser?.includes(currentUser._id) ? (
+                  {user.subscriberdUser?.includes(currentUser?._id) ? (
                     <FaHeartBroken />
                   ) : (
                     <FaHeart />
                   )}
-                  {user.subscriberdUser?.includes(currentUser._id) ? (
+                  {user.subscriberdUser?.includes(currentUser?._id) ? (
                     <span>Unubscribe</span>
                   ) : (
                     <span>Subscribe</span>
@@ -188,7 +203,12 @@ function Post() {
             </button>
           </div>
           <div className="Recommended-section-node">
-            <Recommended prop={hideRecommended} recommend={recommend} />
+            <Recommended
+              prop={hideRecommended}
+              recommend={recommend}
+              setRecommend={setRecommend}
+              post={post}
+            />
           </div>
         </>
       )}

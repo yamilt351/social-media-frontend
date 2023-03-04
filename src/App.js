@@ -5,7 +5,7 @@ import Navbar from "./Components/navbar/navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/LoginScreen/Login";
 import CardContainer from "./Components/CardContainer/CardContainer";
-import CreatePost from "./Components/CreatePost/CreatePost";
+import CreatePost from "./Components/CreatePost/CreatePost.jsx";
 import Post from "./Components/Posts/Post";
 import Searchbar from "./Components/SearchBar/Searchbar";
 import Profile from "./Components/Profile/Profile";
