@@ -36,7 +36,7 @@ function Card({ userId, like, title, createdAt, id, description }) {
           <div className="footer-card-container">
             <div className="like-container-card">
               <p className="CreatedAt">
-                <MdThumbUp /> {like.length}{" "}
+                <MdThumbUp /> {like?.length}{" "}
               </p>
             </div>
             <div className="createdAt-card-container">

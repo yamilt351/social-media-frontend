@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Recommended from "../Recommended/Recommended";
-import { FaHeart, FaHeartBroken } from "react-icons/fa";
+import { FaFeatherAlt, FaHeart, FaHeartBroken, FaTrash } from "react-icons/fa";
 import ContentComments from "../contentComments/ContentComments";
 import { Link, useLocation } from "react-router-dom";
 import "./Post.css";
+import "../contentComments/RenderComments/Comments.css"
 import {
   MdRemoveRedEye,
   MdThumbDown,
@@ -59,8 +60,17 @@ function Post() {
         console.error(error.message);
       }
     };
-			sendData();
+    sendData();
   });
+
+
+  const handleChangePost = async (e) => {
+    e.preventDefault();
+  };
+
+  const handleDeletePost = async (e) => {
+    e.preventDefault();
+  };
 
   return (
     <section className="section-Recommended-container">
@@ -74,6 +84,21 @@ function Post() {
               </h1>{" "}
               <p className="createdat-style">{format(post.createdAt)}</p>
             </div>
+            {/* si es tuyo el comentario te deja DEl & EDIT*/}
+
+			{currentUser._id === userPath ? (
+              <div className="buttons-user-actio">
+                <button className="interaction" onClick={handleChangePost}>
+                  <FaFeatherAlt /> Edit
+                </button>
+
+                <button className="interaction" onClick={handleDeletePost}>
+                  <FaTrash /> Delete
+                </button>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           <div className="body-post">
             <p className="parragraph-2">{post.description}</p>
