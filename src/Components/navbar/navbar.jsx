@@ -34,8 +34,8 @@ function Navbar() {
 				*/}
 
         <h1 className={show ? "Username" : "hide-text"}>
-          <Link className="Username" to={`/Profile/${currentUser._id}`}>
-            {currentUser.username}
+          <Link className="Username" to={`/`}>
+            {currentUser? currentUser.username: ""}
           </Link>
         </h1>
       </div>

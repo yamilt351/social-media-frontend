@@ -1,0 +1,13 @@
+.Loading{
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: auto;
+}
+
+.loading-text{
+		font-weight: bold;
+		color: var(--clr-grey-1);
+		font-size: 3rem;
+}
