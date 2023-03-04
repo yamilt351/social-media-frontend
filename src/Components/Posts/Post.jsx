@@ -60,7 +60,7 @@ function Post() {
       }
     };
     fetchData();
-  }, []);
+  }, [postPath,userPath]);
 
   useEffect(() => {
     const fetchRecommended = async () => {
@@ -80,6 +80,7 @@ function Post() {
     };
 			fetchRecommended()
   },[post]);
+
   const handleChangePost = async (e) => {
     e.preventDefault();
   };
