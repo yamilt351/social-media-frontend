@@ -25,7 +25,6 @@ The goal with this project is show the backend working.
   - [Redux Toolkit](#Redux-Toolkit)
   - [React Icons](#React-Icons)
   - [Local Storage](#Local-Storage)
-  - [Express Rate Limit](#Express-Rate-Limit)
   - [Timeago](#Timeago)
   - [Axios](#Axios)
   - [Verify Token](#Verify-Token)
@@ -164,6 +163,12 @@ Client side routing is enabled by creating a Router and linking/submitting to pa
 - By default, dates show in timestamps format, but the server provides timeago.js to change that format.
 - You can find more about timeago.js [here](https://www.npmjs.com/package/timeago.js/v/4.0.0-beta.3)
 
+## Axios: 
+
+-Version:  "^1.3.4"
+
+- We use axios to fetch our endpoints
+
 ## Verify Token:
 
 - This API use JWT as an authentication method. Passing a cookie into the user browser header,
@@ -183,6 +188,11 @@ so, if your gonna use axios, please add `{withCredentials: true, credentials: 'i
 
 ---
 
+#  About The Project
+## Deploy 
+
+- The project was deployed using Github pages, and the backend was deployed using [Render](https://rest-api-social.onrender.com/api/posts/random)
+
 ## Future Features
 
 | high                                    | medium                                     |
@@ -193,19 +203,19 @@ so, if your gonna use axios, please add `{withCredentials: true, credentials: 'i
 
 ---
 
-# About Us
+## About Us
 
 - [Yamil Tauil Linkedin](https://www.linkedin.com/in/yamil-tauil/)
 - [Contact Yamil Tauil](mailto:y.kasper@protonmail.com)
 
 - [Luis Franco](https://github.com/luisfranco23)
 
-# Changelog
+## Changelog
 
 - subscriptions: now subscriptions endpoints send the right response
 - Edit user: The Description was updated to indicates the right funcionality.
 
-# Contributions
+## Contributions
 
 - Clone Repo
 - Create your branch
@@ -219,7 +229,7 @@ git clone https://github.com/yamilt351/social-media-frontend/tree/main
 - Document your changes
 - create your pull request with evidences
 
-# Licence
+## Licence
 
 - GPLv3
 
