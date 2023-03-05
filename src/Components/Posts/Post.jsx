@@ -81,6 +81,9 @@ function Post() {
 			fetchRecommended()
   },[post]);
 
+		// FUNCIONES VACIAS 
+		//
+		//
   const handleChangePost = async (e) => {
     e.preventDefault();
   };
@@ -88,6 +91,7 @@ function Post() {
   const handleDeletePost = async (e) => {
     e.preventDefault();
   };
+
   return (
     <section className="section-Recommended-container">
       {!recommend || !post || !user ? (
