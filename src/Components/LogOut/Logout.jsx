@@ -23,8 +23,8 @@ function LogOut() {
       <div className="form-container-LogOut">
         <h1>¿Are sure you want to leave us?</h1>
         <div className="button-action-logout">
-          <button onClick={handleLogOut}>YES</button>
-          <button>NO</button>
+          <button className='button-action logout' onClick={handleLogOut}>YES</button>
+          <button className='button-action stay'>NO</button>
         </div>
       </div>
     </>
