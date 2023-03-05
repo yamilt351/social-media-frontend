@@ -35,7 +35,6 @@ function Login() {
         { withCredentials: true, credentials: "include" }
       );
       dispatch(loginSuccess(res.data));
-
       navigate("/");
     } catch (error) {
       console.error(error.message);
