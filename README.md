@@ -34,7 +34,7 @@ The goal with this project is show the backend working.
   - [Future Features](#Future-Features)
   - [About Us](#About-Us)
   - [Changelog](#Changelog)
-	- [Contributions](#Contributions)
+  - [Contributions](#Contributions)
 
 # Features And Usage
 
@@ -70,7 +70,7 @@ The goal with this project is show the backend working.
 | Delete User         | y           |
 | Loading Screen      | y           |
 
-- You can watch the whole Rest Api Endpoint  [here](https://github.com/yamilt351/Social-media) and compare.
+- You can watch the whole Rest Api Endpoint [here](https://github.com/yamilt351/Social-media) and compare.
 
 - go back to --->[Index](#index)
 
@@ -122,14 +122,13 @@ The goal with this project is show the backend working.
 
 - go back to --->[Index](#index)
 
-
 # Tools:
 
 ## React:
 
 - Version: "^18.2.0"
 
-## React Router Don:
+## React Router Dom:
 
 - Version: ^6.8.1"
 
@@ -184,8 +183,6 @@ so, if your gonna use axios, please add `{withCredentials: true, credentials: 'i
 
 ---
 
-
-
 ## Future Features
 
 | high                                    | medium                                     |
@@ -201,8 +198,7 @@ so, if your gonna use axios, please add `{withCredentials: true, credentials: 'i
 - [Yamil Tauil Linkedin](https://www.linkedin.com/in/yamil-tauil/)
 - [Contact Yamil Tauil](mailto:y.kasper@protonmail.com)
 
--[Luis Franco](https://github.com/luisfranco23)
-
+- [Luis Franco](https://github.com/luisfranco23)
 
 # Changelog
 
