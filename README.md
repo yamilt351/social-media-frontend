@@ -80,8 +80,40 @@ The goal with this project is show the backend working.
 ---
 
 ## Demo Desktop:
+### Home
+[Screencast from 2023-03-05 20-06-22.webm](https://user-images.githubusercontent.com/88646148/222991159-b246a57f-47ab-4693-8e5b-928ba4ff0434.webm)
+###
+![Screenshot from 2023-03-05 20-23-27](https://user-images.githubusercontent.com/88646148/222991928-0f4fc983-5863-419a-ac56-58b1dc1c4e1f.png)
+### NavBar Preview
+![Screenshot from 2023-03-05 20-24-25](https://user-images.githubusercontent.com/88646148/222991947-19606d07-222d-46f0-94be-bf60e3d74554.png)
+### Post + Recomendations + Comment Sections + Like / Dislike /subscribe/unsuscribe Functions
+![image](https://user-images.githubusercontent.com/88646148/222991966-196e6d48-f07a-4706-bf29-959b62fee659.png)
+
+### Loading Screen
+![Screenshot from 2023-03-05 20-24-25](https://user-images.githubusercontent.com/88646148/222992033-1b56fa8d-f1d6-4b77-b54b-675c1d13f21c.png)
+### Logout
+![image](https://user-images.githubusercontent.com/88646148/222992058-3a5ce92a-8a6c-410d-aadb-c344ab19983c.png)
+### Search
+![image](https://user-images.githubusercontent.com/88646148/222992072-6d6a81b1-c8eb-4b2e-950f-4dfb99218616.png)
+
+
 
 ## Demo Mobile:
+[Screencast from 2023-03-05 20-21-53.webm](https://user-images.githubusercontent.com/88646148/222991855-bf21d98b-9569-4ede-8be3-b4e03198e8cb.webm)
+
+### Home
+![image](https://user-images.githubusercontent.com/88646148/222992416-a1e341ef-6fd0-45ad-b5fb-e1f71d1de7b4.png)
+
+
+### Post + Recomendations + Comment Sections + Like / Dislike /subscribe/unsuscribe Functions
+![image](https://user-images.githubusercontent.com/88646148/222992391-9bb85a25-106b-48b3-a06a-2bd32b21e633.png)
+
+### Loading Screen
+![image](https://user-images.githubusercontent.com/88646148/222992335-e94d22e1-d951-46da-913a-e84209ee51ec.png)
+
+### Search
+![image](https://user-images.githubusercontent.com/88646148/222992326-642a678c-49ff-4634-8138-89d8b0533b87.png)
+
 
 # CSS And Rules:
 
