@@ -10,6 +10,7 @@ import Post from "./Components/Posts/Post";
 import Searchbar from "./Components/SearchBar/Searchbar";
 import Profile from "./Components/Profile/Profile";
 import LogOut from "./Components/LogOut/Logout";
+import Search from './Components/SearchBar/Search';
 /*eslint linebreak-style: ["error", "unix"]*/
 
 class App extends Component {
@@ -43,6 +44,7 @@ class App extends Component {
             <Route path=":id/:userId" element={<Post />} />
           </Route>
           <Route path="/Logout" element={<LogOut />} />
+				<Route path='/search' element={<Search/>}/>
         </Routes>
       </Router>
     );

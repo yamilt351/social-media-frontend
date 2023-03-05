@@ -16,7 +16,7 @@ import {
 } from "react-icons/md";
 import axios from "axios";
 import { URL } from "../../urlStore";
-// import { format } from "timeago.js";
+import { format } from "timeago.js";
 import { useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 
@@ -102,7 +102,7 @@ function Post() {
                     {" "}
                     <MdOutlineBookmark /> {post.title}
                   </h1>{" "}
-                  <p className="createdat-style">{post.createdAt}</p>
+                  <p className="createdat-style">{format(post.createdAt)}</p>
                 </div>
                 {/* si es tuyo el comentario te deja DEl & EDIT*/}
 

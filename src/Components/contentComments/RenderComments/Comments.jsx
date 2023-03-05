@@ -80,12 +80,12 @@ function Comment({ description, userId, like, dislike, createdat,id }) {
 					{/* si es tuyo el comentario te deja DEl & EDIT*/}
 
           {currentUser?._id === userId? (
-            <div className="buttons-user-action">
-              <button className="interaction" onClick={handleChangeComment}>
+            <div className="buttons-user-action user-auth">
+              <button className="interaction edit" onClick={handleChangeComment}>
                 <FaFeatherAlt /> Edit
               </button>
 
-              <button className="interaction" onClick={handleDeleteComment}>
+              <button className="interaction delete" onClick={handleDeleteComment}>
                 <FaTrash /> Delete
               </button>
             </div>
