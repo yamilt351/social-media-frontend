@@ -11,15 +11,16 @@
   display: flex;
   text-align: center;
   justify-content: center;
-  margin: 6rem 0;
+  margin: 6rem 0 auto 0;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: var(--media-subtitle);
   color: var(--clr-grey-1);
 }
 
 @media screen and (min-width: 820px) {
   .Page-indicator {
-    margin: 6rem 0;
+    margin: 6rem 0 2rem 0;
+    font-size: var(--normal-name-section);
   }
   .section-card-container {
     margin: auto 10rem;

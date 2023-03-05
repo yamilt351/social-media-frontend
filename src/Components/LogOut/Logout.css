@@ -1,0 +1,19 @@
+.form-container-LogOut {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 20rem auto;
+}
+
+.button-action {
+  border: none;
+	padding: 1rem;
+}
+.stay{
+		background-color: var(--clr-grey-1);
+		color: var(--clr-primary-1);
+}
+.logout{
+		background-color: red;
+		color: #fff;
+}
