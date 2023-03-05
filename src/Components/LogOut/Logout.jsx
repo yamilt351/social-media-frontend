@@ -24,7 +24,7 @@ function LogOut() {
         <h1>¿Are sure you want to leave us?</h1>
         <div className="button-action-logout">
           <button className='button-action logout' onClick={handleLogOut}>YES</button>
-          <button className='button-action stay'>NO</button>
+          <button className='button-action stay' onClick={()=>navigate('/')}>NO</button>
         </div>
       </div>
     </>
