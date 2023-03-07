@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Loading from "react-loading";
-import { URL } from '../../urlStore';
+import { URL } from "../../urlStore";
 import { useLocation } from "react-router-dom";
 import Card from "../Card/card";
 /* eslint-disable react/prop-types */ // TODO:
@@ -14,7 +14,7 @@ function Search() {
       try {
         const fetchData = async () => {
           const search = await axios.get(`${URL}posts/search${query}`);
-						console.log(search);
+          console.log(search);
           setArticle(search.data);
         };
         fetchData();
