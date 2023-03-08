@@ -51,6 +51,10 @@ function Login() {
       console.error(error.message);
     }
   };
+
+  axios.post(`${URL}auth/signUp`, { name, password, email })
+  .then(res => console.log(res))
+  console.log(document.cookie)
   console.log(name, password, email);
   return (
     <section id="SignIn" className="SignIn">
