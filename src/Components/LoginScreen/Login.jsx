@@ -52,10 +52,12 @@ function Login() {
     }
   };
 
-  axios.post(`${URL}auth/signUp`, { name, password, email })
-  .then(res => console.log(res))
-  console.log(document.cookie)
-  console.log(name, password, email);
+  // var req = new XMLHttpRequest();
+  // req.open('GET', document.location, false);
+  // req.send(null);
+  // var headers = req.getAllResponseHeaders().toLowerCase();
+  // alert(headers['set-cookie']);
+
   return (
     <section id="SignIn" className="SignIn">
       <div className="SignIn-Container">

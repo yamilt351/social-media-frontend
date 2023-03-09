@@ -24,12 +24,12 @@ class App extends Component {
           <Route path="/" element={<CardContainer type="random" indicator="Home" />} />
           <Route path="/SignIn" element={<Login type="signin" secondType="signup" />} />
           <Route path='/search' element={<Search />} />
+          <Route path="/Trending" element={<CardContainer type="trend" indicator="Popular" />} />
           <Route path="/Post">
             <Route path=":id/:userId" element={<Post />} />
           </Route>
           <Route element={<ProtectedRoutes/>}>
             <Route path="/Subscriptions" element={<CardContainer type="subscriptions" indicator="Subscriptions" />} />
-            <Route path="/Trending" element={<CardContainer type="trend" indicator="Popular" />} />
             <Route path="/CreatePost" element={<CreatePost type="posts" />} />
             <Route path="/Profile" element={<Profile type="profile" />} />
             <Route path="/Logout" element={<LogOut />} />

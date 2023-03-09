@@ -54,6 +54,31 @@
 .button-post:active {
   transform: scale(1.1);
 }
+.form__file {
+  position: relative;
+  display: inline-block;
+}
+.form__file::before {
+  background-color: #5678EF;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.form__file input[type="file"] {
+  opacity: 0;
+  width: 100%;
+  height: 32px;
+  display: inline-block;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 760px) {
   .container {

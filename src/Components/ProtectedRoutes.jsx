@@ -1,9 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Outlet, Navigate } from 'react-router-dom'
 
 const ProtectedRoutes = () => {
-    let valor = false
-    if (valor) {
+    const { currentUser } = useSelector((state) => state.user);
+    if (currentUser?.token) {
         return <Outlet/>
     }else {
         return <Navigate to={'/SignIn'}/>
