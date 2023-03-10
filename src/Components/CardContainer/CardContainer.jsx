@@ -19,7 +19,6 @@ function CardContainer({ indicator, type }) {
     };
     fetchArticle();
   }, [type]);
-
   return (
     <>
       <h1 className="Page-indicator">{indicator}</h1>
