@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ToastContainer } from 'react-toastify';
+import Footer from '../Footer/Footer';
 import FormLogin from './FormLogin';
 import FormRegister from './FormRegister';
 
@@ -26,6 +27,7 @@ const LoginScreeem = () => {
           )}
         <p className="swichter-button" onClick={swicht} > {registered ? "¿You do not have an account?" : "Login"}</p>
       </div>
+      <Footer/>
     </section>
   );
 }

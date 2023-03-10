@@ -1,0 +1,29 @@
+.footer__container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: rgb(1, 38, 68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(211, 211, 211);
+}
+.footer__title {
+    font-size: 1rem;
+}
+.footer__title::after {
+    content: " ";
+    background: red;
+    width: 20px;
+    height: 5px;
+}
+.footer__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+.icon {
+    text-decoration: underline;
+    cursor: pointer;
+}

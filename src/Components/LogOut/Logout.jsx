@@ -19,15 +19,15 @@ function LogOut() {
   };
 
   return (
-    <>
-      <div className="form-container-LogOut">
+    <div className="form-container-LogOut">
+      <div className="modal">
         <h1>¿Are sure you want to leave us?</h1>
         <div className="button-action-logout">
-          <button className='button-action logout' onClick={handleLogOut}>YES</button>
-          <button className='button-action stay' onClick={()=>navigate('/')}>NO</button>
+          <button className='action-button btn__hover' onClick={handleLogOut}>YES</button>
+          <button className='action-button' onClick={() => navigate('/')}>NO</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default LogOut;

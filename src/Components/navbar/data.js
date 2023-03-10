@@ -21,5 +21,5 @@ export const loged = [
   { id: 2, name: "Subscriptions", icon: <FaHeart />, url: "/Subscriptions" },
   // { id: 3, name: "Profile", icon: <FaUserAlt />, url: `/Profile` },
   { id: 4, name: "Create Post", icon: <FaFeather />, url: "/CreatePost" },
-  { id: 5, name: "Log Out", icon: <FaArrowCircleLeft />, url: "/Logout" },
+  { id: 5, name: "Log Out", icon: <FaArrowCircleLeft />, url: "/LogOut" },
 ];

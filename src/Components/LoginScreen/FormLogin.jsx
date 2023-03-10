@@ -16,7 +16,7 @@ const FormLogin = () => {
 
   const submit = (data) => {
     console.log(data);
-    if (Object.values(data)[0].length > 1 && Object.values(data)[1].length > 1) {
+    if (Object.values(data)[0].length > 2 && Object.values(data)[1].length > 2) {
       dispatch(loginStart());
       axios.post(`${URL}auth/signin`, data, { withCredentials: true })
         .then(res => {

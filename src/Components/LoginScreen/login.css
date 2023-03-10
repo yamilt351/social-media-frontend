@@ -62,17 +62,14 @@
   transition: transform .7s ease;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+  background-color: var(--clr-primary-2);
 }
 
 .action-button:hover {
-  background-color: var(--clr-primary-2);
+  background-color: rgb(71, 71, 71);
 }
 .action-button:active {
   transform: scale(1.2);
-}
-
-.action-button {
-  background-color: var(--clr-primary-2);
 }
 
 .swichter-button {
