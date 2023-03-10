@@ -5,15 +5,22 @@ import Card from "../Card/card";
 import axios from "axios";
 import { URL } from "../../urlStore";
 import Loading from "../Loading/Loading";
+import { useSelector } from "react-redux";
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 /*eslint linebreak-style: ["error", "unix"]*/
 
 function CardContainer({ indicator, type }) {
+  const {currentUser} = useSelector((state) => state.user)
+  console.log(currentUser?.token)
   const [article, setArticle] = useState([]);
 
   useEffect(() => {
     const fetchArticle = async () => {
-      const res = await axios.get(`${URL}posts/${type}`);
+      const res = await axios.get(`${URL}posts/${type}`,{
+        headers: {
+          Authorization: currentUser?.token
+        }
+      });
       const data = res.data;
       setArticle(data);
     };

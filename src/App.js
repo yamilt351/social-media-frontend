@@ -25,6 +25,7 @@ class App extends Component {
           <Route path="/SignIn" element={<LoginScreeem type="signin" secondType="signup" />} />
           <Route path="/Trending" element={<CardContainer type="trend" indicator="Popular" />} />
           <Route path='/search' element={<Search />} />
+          <Route path="/Trending" element={<CardContainer type="trend" indicator="Popular" />} />
           <Route path="/Post">
             <Route path=":id/:userId" element={<Post />} />
           </Route>
