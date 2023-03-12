@@ -37,6 +37,10 @@
   padding: 0.5rem;
 }
 
+.user-auth{
+    margin: auto -0.5rem auto auto;
+
+}
 
 
 @media screen and (min-width: 820px) {
