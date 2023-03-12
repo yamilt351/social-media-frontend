@@ -1,19 +1,25 @@
 .form-container-LogOut {
+  width: 100vw;
+  height: 100VH;
+  background: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
-  align-content: center;
-  margin: 20rem auto;
+  align-items: center;
 }
-
-.button-action {
-  border: none;
-	padding: 1rem;
+.modal {
+  width: 400px;
+  background-color: white;
+  min-height: 100px;
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
 }
-.stay{
-		background-color: var(--clr-grey-1);
-		color: var(--clr-primary-1);
-}
-.logout{
-		background-color: red;
-		color: #fff;
+.button-action-logout {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }

@@ -11,7 +11,6 @@ import { useSelector } from "react-redux";
 function Navbar() {
   const { currentUser } = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
-
   const showNabvar = () => {
     show ? setShow(false) : setShow(true);
   };
