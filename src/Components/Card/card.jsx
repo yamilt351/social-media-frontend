@@ -8,7 +8,7 @@ import "./card.css";
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 
 /*eslint linebreak-style: ["error", "unix"]*/
-function Card({ userId, like, title, createdAt, id, description }) {
+function Card({ userId, tags, like, title, createdAt, id, description }) {
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -23,16 +23,17 @@ function Card({ userId, like, title, createdAt, id, description }) {
       console.error(error.message);
     }
   }, [userId]);
-
+ 
   return (
-    <Link className="link-list" to={`/Post/${id}/${userId}`}>
+    <Link className="link-list-cards" to={`/Post/${id}/${userId}`}>
       <div className="card-container">
         <div className="titles">
+          <p className="tags-Story">{tags}</p>
+          <h3 className="autor">{user.username}</h3>
           <h2 className="Story">{title}</h2>
         </div>
         <div>
           <p className="text-description">{description}</p>
-          <h3 className="autor">{user.username}</h3>
           <div className="footer-card-container">
             <div className="like-container-card">
               <p className="CreatedAt">
@@ -40,9 +41,7 @@ function Card({ userId, like, title, createdAt, id, description }) {
               </p>
             </div>
             <div className="createdAt-card-container">
-              <p className='CreatedAt'>
-                {format(createdAt)}
-              </p>
+              <p className="CreatedAt">{format(createdAt)}</p>
             </div>
           </div>
         </div>

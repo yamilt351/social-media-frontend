@@ -1,8 +1,9 @@
 .card {
-  width: 20rem;
-	height: 20rem;
+  width: 50rem;
   margin: 0.5rem;
   display: block;
+	max-height: 30rem;
+	overflow: hidden;
 	background-color: var(--clr-primary-4);
   position: relative;
   -webkit-box-shadow: 5px 5px 0px 0px var(--clr-primary-1),
@@ -13,22 +14,34 @@
 .text-description{
 		display: flex;
 		flex-wrap: wrap;
-     width: 100%;
-		 color: var(--clr-primary-1);
+    width: 100%;
+		color: var(--clr-primary-1);
+    font-weight: bold;
+}
+.link-list-cards{
+		height: 25rem;
+		overflow: hidden;
+		text-decoration: none;
 }
 .autor,
 .Story,
+.tags-Story,
 .CreatedAt {
   color: var(--clr-primary-1);
   margin: 0;
   text-align: center;
   justify-content: center;
 }
+
 .Story{
-		font-weight: 900;
+		font-size: 1.4rem;
+		font-weight: 900px;
 		text-transform: uppercase;
 }
-
+.footer-card-container{
+		display: flex;
+    justify-content: space-between;
+}
 /* .thumbnail { */
 /*   height: 12rem; */
 /*   width: auto; */
