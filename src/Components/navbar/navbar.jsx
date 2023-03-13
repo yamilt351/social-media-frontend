@@ -6,7 +6,6 @@ import "./navbar.css";
 import { MdMenu } from "react-icons/md";
 import { useSelector } from "react-redux";
 
-
 /*eslint linebreak-style: ["error", "unix"]*/
 function Navbar() {
   const { currentUser } = useSelector((state) => state.user);
@@ -14,27 +13,24 @@ function Navbar() {
   const showNabvar = () => {
     show ? setShow(false) : setShow(true);
   };
-
+  console.log(currentUser);
   return (
     <nav className={show ? "NavbarContainer" : "NavbarContainerHide"}>
       <button className="Menu" onClick={() => showNabvar()}>
         <MdMenu />
       </button>
       <div className="UserProfile">
-        {/* 
-        <div className={show ? "UserPhoto" : "hide-text"}>
+        {/*  <div className={show ? "UserPhoto" : "hide-text"}>
           <Link to={"/Profile"}>
             <img
               className={show ? "Photo" : "hide-text"}
               src="https://i.pinimg.com/originals/7b/b0/c7/7bb0c7c3684088adced7c455f9b0a307.jpg"
             />
           </Link>
-        </div>
-				*/}
-
+        </div>*/}
         <h1 className={show ? "Username" : "hide-text"}>
           <Link className="Username" to={`/`}>
-            {currentUser? currentUser.username: ""}
+            {currentUser ? currentUser.others.username : ""}
           </Link>
         </h1>
       </div>
