@@ -11,6 +11,10 @@
   box-shadow: 5px 5px 0px 0px var(--clr-primary-1),
     10px 10px 0px 0px var(--clr-grey-1), 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
+.card:hover{
+		border: 2px solid var(--clr-primary-1);
+		border-radius: 5px;
+}
 .text-description{
 		display: flex;
 		flex-wrap: wrap;
