@@ -10,9 +10,10 @@ function Searchbar() {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
-  const navigateTo = (e) => {
-    e.preventDefault();
-    navigate(`/search?q=${query}`);
+  const navigateTo = async (e) => {
+			e.preventDefault()
+    await navigate(`/search?q=${query}`);
+    document.querySelector(".container__search__input").value = "";
   };
   return (
     <div className="full-navbar-container">
