@@ -5,6 +5,7 @@
 	overflow: hidden;
 	background-color: var(--clr-primary-4);
   position: relative;
+	border: 0.2px solid var(--clr-grey-1);
   -webkit-box-shadow: 5px 5px 0px 0px var(--clr-primary-1),
     10px 10px 0px 0px var(--clr-grey-1), 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 5px 5px 0px 0px var(--clr-primary-1),
@@ -30,7 +31,6 @@
 		flex-wrap: wrap;
     width: 100%;
 		color: var(--clr-primary-1);
-    font-weight: bold;
 }
 .link-list-cards{
 		height: 25rem;
@@ -49,7 +49,6 @@
 
 .Story{
 		font-size: 1.4rem;
-		font-weight: 900px;
 		text-transform: uppercase;
 }
 .footer-card-container{
