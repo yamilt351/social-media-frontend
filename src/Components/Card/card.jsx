@@ -23,13 +23,15 @@ function Card({ userId, tags, like, title, createdAt, id, description }) {
       console.error(error.message);
     }
   }, [userId]);
- 
+
   return (
     <Link className="link-list-cards" to={`/Post/${id}/${userId}`}>
       <div className="card-container">
         <div className="titles">
           <p className="tags-Story">{tags}</p>
-          <h3 className="autor">{user.username}</h3>
+          <h3 className="autor">Author: {user.username}</h3>
+        </div>
+        <div>
           <h2 className="Story">{title}</h2>
         </div>
         <div>

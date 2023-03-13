@@ -1,8 +1,7 @@
 .card {
   width: 50rem;
-  margin: 0.5rem;
+  margin: 1rem;
   display: block;
-	max-height: 30rem;
 	overflow: hidden;
 	background-color: var(--clr-primary-4);
   position: relative;
@@ -10,10 +9,21 @@
     10px 10px 0px 0px var(--clr-grey-1), 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 5px 5px 0px 0px var(--clr-primary-1),
     10px 10px 0px 0px var(--clr-grey-1), 5px 5px 15px 5px rgba(0, 0, 0, 0);
-}
-.card:hover{
-		border: 2px solid var(--clr-primary-1);
 		border-radius: 5px;
+}
+.card-container{
+		margin: auto 1rem;
+		max-height: 30rem;
+}
+
+.card:hover{
+		border: 1px solid var(--clr-primary-1);
+		border-radius: 5px;
+}
+.titles{
+		display: flex;
+		justify-content: space-between;
+		margin:1rem ;
 }
 .text-description{
 		display: flex;
@@ -45,6 +55,7 @@
 .footer-card-container{
 		display: flex;
     justify-content: space-between;
+		margin: 1rem;
 }
 /* .thumbnail { */
 /*   height: 12rem; */
