@@ -156,7 +156,7 @@ function Post() {
               </div>
               <div className="footer__items__center">
                 <button className="like footer__items__center gap">
-                  {post.likes?.includes(currentUser?._id) ? (
+                  {post.likes?.includes(currentUser?.others._id) ? (
                     <MdThumbUp />
                   ) : (
                     <MdThumbUpOffAlt />
@@ -164,7 +164,7 @@ function Post() {
                   <span> like</span>
                 </button>
                 <button className="dislike footer__items__center gap">
-                  {post.dislikes?.includes(currentUser?._id) ? (
+                  {post.dislikes?.includes(currentUser?.others._id) ? (
                     <MdThumbDown />
                   ) : (
                     <MdThumbDownOffAlt />
@@ -174,12 +174,12 @@ function Post() {
                 <button className="Subscribe footer__items__center gap">
                   {/*deberia cambiar de color el boton de subscribirse idealmente*/}
 
-                  {user.subscriberdUser?.includes(currentUser?._id) ? (
+                  {user.subscriberdUser?.includes(currentUser?.others._id) ? (
                     <FaHeartBroken />
                   ) : (
                     <FaHeart />
                   )}
-                  {user.subscriberdUser?.includes(currentUser?._id) ? (
+                  {user.subscriberdUser?.includes(currentUser?.others._id) ? (
                     <span>Unubscribe</span>
                   ) : (
                     <span>Subscribe</span>

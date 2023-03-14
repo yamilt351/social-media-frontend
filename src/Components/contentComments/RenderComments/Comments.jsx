@@ -70,7 +70,7 @@ function Comment({ description, userId, like, dislike, createdat,id }) {
           <img src="adasda" className="profile-comment-picture" />
         </Link>
         <Link to={`/Profile/${userId}`} className="link-list-user">
-          <h2>{currentUser?.username}.</h2>
+          <h2>{currentUser?.others.username}.</h2>
         </Link>
       </div>
       <div className="comment-render-container">
@@ -79,7 +79,7 @@ function Comment({ description, userId, like, dislike, createdat,id }) {
           <p>{format(createdat)}</p>
 					{/* si es tuyo el comentario te deja DEl & EDIT*/}
 
-          {currentUser?._id === userId? (
+          {currentUser?.others._id === userId? (
             <div className="buttons-user-action user-auth">
               <button className="interaction edit" onClick={handleChangeComment}>
                 <FaFeatherAlt /> Edit
