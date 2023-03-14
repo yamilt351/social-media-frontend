@@ -4,15 +4,16 @@ import React, { useState } from "react";
 import { MdSearch } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import "./Searchbar.css";
-
+import { escapeString } from "../ApiCall/scapedStrings";
 /*eslint linebreak-style: ["error", "unix"]*/
 function Searchbar() {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
   const navigateTo = async (e) => {
-			e.preventDefault()
-    await navigate(`/search?q=${query}`);
+    e.preventDefault();
+    escapeString(query);
+    navigate(`/search?q=${query}`);
     document.querySelector(".container__search__input").value = "";
   };
   return (
